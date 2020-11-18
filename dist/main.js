@@ -1,1 +1,1 @@
-console.log("Ready for ToDo List!");
+(()=>{"use strict";console.log("This is the ToDo List!"),console.log("inside init()")})();
