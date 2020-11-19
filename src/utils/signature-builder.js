@@ -1,4 +1,4 @@
-function buildSignature(targetElement) {
+const buildSignature = targetElement => {
     const div = document.createElement('div');
     div.setAttribute('id', 'signature');
     const spanOne = document.createElement('span');

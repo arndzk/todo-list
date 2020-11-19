@@ -1,4 +1,7 @@
-function appendDomElement (domElementTarget, domElementChild) {
+const appendDomElement = (
+    domElementTarget, 
+    domElementChild
+    ) => {
     const targetElement = document.getElementById(domElementTarget);
     targetElement.appendChild(domElementChild);
 }

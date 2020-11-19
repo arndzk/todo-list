@@ -1,4 +1,9 @@
-function buildDomElement(domElement, id, domClass = null , textContent = null) {
+const buildDomElement = (
+    domElement, 
+    id, 
+    domClass = null, 
+    textContent = null
+    ) => {
     const element = document.createElement(domElement);
     element.setAttribute('id', id);
     if ( domClass != null ) {
