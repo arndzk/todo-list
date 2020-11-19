@@ -1,0 +1,9 @@
+@import 'signature.css';
+
+body {
+    text-align: center;
+}
+
+#content {
+    margin: 0px;
+}

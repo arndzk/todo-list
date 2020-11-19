@@ -1,5 +1,5 @@
-import loadPage from './modules/initial-page-load';
-import './styles/style.css';
+import loadPage from './modules/page-frame';
+import './styles/styles.css';
 
 console.log(`This is the ToDo List!`);
 
