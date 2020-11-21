@@ -1,6 +1,6 @@
-const selectDomElement = targetElement => {
+const selectElement = targetElement => {
     const element = document.getElementById(targetElement);
     return element;
 }
 
-export default selectDomElement;
+export default selectElement;

@@ -1,23 +1,25 @@
 import buildDomElement from '../utils/dom-element-builder';
 import appendDomElement from '../utils/dom-element-appender';
 import buildSignature from '../utils/signature-builder';
+import createElement from '../utils/element-creator';
+import appendElement from '../utils/element-selector';
 
 const createHeader = _ => {
-    const header = buildDomElement('header', 'header');
-    appendDomElement('content', header);
+    const header = createElement('header', 'header');
+    appendElement('content', header);
 }
 const createSidePanel = _ => {
-    const sidePanel = buildDomElement('div', 'side-panel');
-    appendDomElement('content', sidePanel);
+    const sidePanel = createElement('div', 'side-panel');
+    appendElement('content', sidePanel);
 }
 const createMainPanel = _ => {
-    const mainPanel = buildDomElement('main', 'main-panel');
-    appendDomElement('content', mainPanel);
+    const mainPanel = createElement('main', 'main-panel');
+    appendElement('content', mainPanel);
 }
 const createFooter = _ => {
-    const footer = buildDomElement('footer', 'footer');
+    const footer = createElement('footer', 'footer');
     buildSignature(footer);
-    appendDomElement('content', footer);
+    appendElement('content', footer);
 }
 const loadPageFrame = _ => {
     createHeader();
