@@ -1,8 +1,6 @@
-import buildDomElement from '../utils/dom-element-builder';
-import appendDomElement from '../utils/dom-element-appender';
 import buildSignature from '../utils/signature-builder';
 import createElement from '../utils/element-creator';
-import appendElement from '../utils/element-selector';
+import appendElement from '../utils/element-appender';
 
 const createHeader = _ => {
     const header = createElement('header', 'header');
