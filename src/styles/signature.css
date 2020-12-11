@@ -1,6 +1,7 @@
 #signature {
     margin-top: 10px;
-    font-size: 10px;
+    margin-left: 10px;
+    font-size: 12px;
     font-style: italic;
 }
 #red-heart {
@@ -8,4 +9,14 @@
 }
 .emoji {
     font-style: normal;
+}
+#signature span {
+    margin: 0px 1px 0px 1px;
+}
+#signature a {
+    text-decoration: none;
+}
+#signature a:visited {
+    text-decoration: none;
+    color: inherit;
 }

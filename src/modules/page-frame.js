@@ -6,13 +6,17 @@ const createHeader = _ => {
     const header = createElement('header', 'header');
     appendElement('content', header);
 }
+const createMain = _ => {
+    const main = createElement('main', 'main');
+    appendElement('content', main);
+}
 const createSidePanel = _ => {
     const sidePanel = createElement('div', 'side-panel');
-    appendElement('content', sidePanel);
+    appendElement('main', sidePanel);
 }
-const createMainPanel = _ => {
-    const mainPanel = createElement('main', 'main-panel');
-    appendElement('content', mainPanel);
+const createCenterPanel = _ => {
+    const centerPanel = createElement('div', 'center-panel');
+    appendElement('main', centerPanel);
 }
 const createFooter = _ => {
     const footer = createElement('footer', 'footer');
@@ -21,8 +25,9 @@ const createFooter = _ => {
 }
 const loadPageFrame = _ => {
     createHeader();
+    createMain();
     createSidePanel();
-    createMainPanel();
+    createCenterPanel();
     createFooter();
 }
 
