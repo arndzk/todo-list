@@ -2,7 +2,7 @@ import createElement from '../utils/element-creator';
 import appendElement from '../utils/element-appender';
 
 const createProjectsHeader = _ => {
-    const projectsHeader = createElement('div', 'projects-header');
+    const projectsHeader = createElement('div', 'projects-header', null, `Projects`);
     appendElement('side-panel', projectsHeader);
 }
 const createProjectsList = _ => {

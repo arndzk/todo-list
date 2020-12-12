@@ -1,0 +1,8 @@
+@import '_dark-theme.css';
+
+#center-panel {
+    background-color: var(--center-panel);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 3;
+}

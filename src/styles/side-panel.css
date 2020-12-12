@@ -1,0 +1,29 @@
+@import '_dark-theme.css';
+
+#side-panel {
+    min-width: 330px;
+    max-width: 330px;
+    background-color: var(--side-panel);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0.5;
+}
+
+#projects-header {
+    padding: 10px 5px 10px 5px;
+    margin: 0px 5px 0px 5px;
+    text-align: left;
+    font-size: 48px;
+    font-weight: bold;
+    color: #ababab;
+    border-bottom: 1px solid var(--line);
+}
+
+#projects-list {
+    min-height: 500px;
+}
+
+#projects-controls {
+    margin: 0px 5px 0px 5px;
+    border-top: 1px solid var(--line);
+}
