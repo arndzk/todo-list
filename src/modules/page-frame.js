@@ -5,6 +5,8 @@ import appendElement from '../utils/element-appender';
 const createHeader = _ => {
     const header = createElement('header', 'header');
     appendElement('content', header);
+    const headerIcon = createElement('span', 'header-icon', null, '✔️');
+    appendElement('header', headerIcon);
     const headerContent = createElement('h1', 'header-content', null, 'ToDo List');
     appendElement('header', headerContent);
 }

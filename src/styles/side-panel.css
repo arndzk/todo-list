@@ -11,9 +11,9 @@
 
 #projects-header {
     padding: 10px 5px 10px 5px;
-    margin: 0px 5px 0px 5px;
+    margin: 0px 30px 0px 30px;
     text-align: left;
-    font-size: 48px;
+    font-size: 24px;
     font-weight: bold;
     color: #ababab;
     border-bottom: 1px solid var(--line);
@@ -24,6 +24,27 @@
 }
 
 #projects-controls {
-    margin: 0px 5px 0px 5px;
+    margin: 0px 30px 0px 30px;
+    text-align: left;
     border-top: 1px solid var(--line);
+}
+
+#create-project-btn {
+    padding: 5px;
+    margin: 5px;
+    max-height: 32px;
+    border: none;
+    border-radius: 5px;
+    background-color: inherit;
+    color: var(--primary-text);
+    font-size: 14px;
+}
+
+#create-project-btn::before {
+    content: '+';
+    margin-right: 5px;
+}
+
+#create-project-btn:hover {
+    background-color: var(--center-panel);
 }
