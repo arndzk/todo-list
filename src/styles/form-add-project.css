@@ -29,6 +29,7 @@
     flex-grow: 0.2;
     justify-content: start;
     align-items: center;
+    font-size: 18px;
     color: var(--primary-text);
     border-bottom: 1px solid var(--line);
 }
@@ -41,7 +42,72 @@
     display: flex;
     flex-direction: column;
     flex-grow: 4;
-    justify-content: center;
+    justify-content: space-evenly;
+}
+
+#add-project-name-field {
+    margin: 10px 30px 10px 30px;
+    flex-grow: 0.1;
+    display: flex;
+    flex-direction: column;
+}
+
+#add-project-name-field label{
+    padding-left: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    color: var(--primary-text);
+    font-size: 16px;
+}
+
+#add-project-name-field input{
+    margin: 0px 10px 0px 10px;
+    padding: 2px 5px 2px 5px;
+    height: 30%;
+    background-color: var(--background);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    color: var(--primary-text);
+}
+
+#add-project-name-field input:focus{
+    border: 1px solid var(--primary-text);
+}
+
+#add-project-desc-field {
+    margin: 10px 30px 10px 30px;
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+#add-project-desc-field textarea{
+    resize: none;
+    margin: 0px 10px 0px 10px;
+    padding: 2px 5px 2px 5px;
+    height: 90%;
+    background-color: var(--background);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    color: var(--primary-text);
+}
+
+#add-project-desc-field textarea:focus{
+    border: 1px solid var(--primary-text);
+}
+
+#add-project-desc-field label{
+    padding-left: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    color: var(--primary-text);
+    font-size: 16px;
+}
+
+#add-project-desc-field input{
+    margin: 0px 10px 0px 10px;
 }
 
 #add-project-controls {
@@ -52,4 +118,20 @@
     align-items: center;
     flex-grow: 0.2;
     border-top: 1px solid var(--line);
+}
+
+#add-project-controls button {
+    padding: 5px;
+    margin: 5px;
+    max-height: 32px;
+    min-width: 55px;
+    border: none;
+    border-radius: 5px;
+    background-color: inherit;
+    color: var(--primary-text);
+    font-size: 14px;
+}
+
+#add-project-controls button:hover {
+    background-color: var(--center-panel);
 }
