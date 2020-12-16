@@ -2,6 +2,7 @@
 
 #add-project-container {
     position: absolute;
+    margin: 0px;
     background-color: rgba(0,0,0,0.3);
     width: 100%;
     height: 100%;
@@ -17,4 +18,38 @@
     margin: auto;
     background-color: var(--background);
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#add-project-header {
+    margin: 10px 30px 10px 30px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0.2;
+    justify-content: start;
+    align-items: center;
+    color: var(--primary-text);
+    border-bottom: 1px solid var(--line);
+}
+
+#add-project-header-text {
+    padding-left: 10px;
+}
+
+#add-project-inputs {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 4;
+    justify-content: center;
+}
+
+#add-project-controls {
+    margin: 10px 30px 10px 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0.2;
+    border-top: 1px solid var(--line);
 }

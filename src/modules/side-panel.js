@@ -1,6 +1,6 @@
 import createElement from '../utils/element-creator';
 import appendElement from '../utils/element-appender';
-import addListenerProjectBtn from '../listeners/create-project-btn';
+import addListenerAddProjectBtn from '../listeners/add-project-btn';
 
 const createProjectsHeader = _ => {
     const projectsHeader = createElement('div', 'projects-header', null, `Projects`);
@@ -13,15 +13,15 @@ const createProjectsList = _ => {
 const createProjectsControls = _ => {
     const projectsControls = createElement('div', 'projects-controls');
     appendElement('side-panel', projectsControls);
-    const createProjectBtn = createElement('button', 'create-project-btn', null, 'Create Project');
-    appendElement('projects-controls', createProjectBtn);
+    const addProjectBtn = createElement('button', 'add-project-btn', null, 'Add Project');
+    appendElement('projects-controls', addProjectBtn);
 }
 
 const loadSidePanel = _ => {
     createProjectsHeader();
     createProjectsList();
     createProjectsControls();
-    addListenerProjectBtn();
+    addListenerAddProjectBtn();
 }
 
 export default loadSidePanel;

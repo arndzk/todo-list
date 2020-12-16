@@ -29,7 +29,7 @@
     border-top: 1px solid var(--line);
 }
 
-#create-project-btn {
+#add-project-btn {
     padding: 5px;
     margin: 5px;
     max-height: 32px;
@@ -40,11 +40,11 @@
     font-size: 14px;
 }
 
-#create-project-btn::before {
+#add-project-btn::before {
     content: '+';
     margin-right: 5px;
 }
 
-#create-project-btn:hover {
+#add-project-btn:hover {
     background-color: var(--center-panel);
 }
