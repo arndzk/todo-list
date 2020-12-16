@@ -48,3 +48,7 @@
 #add-project-btn:hover {
     background-color: var(--center-panel);
 }
+
+#add-project-btn:active {
+    color: var(--focus);
+}

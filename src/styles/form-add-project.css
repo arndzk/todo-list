@@ -72,7 +72,7 @@
 }
 
 #add-project-name-field input:focus{
-    border: 1px solid var(--primary-text);
+    border: 1px solid var(--focus);
 }
 
 #add-project-desc-field {
@@ -94,7 +94,7 @@
 }
 
 #add-project-desc-field textarea:focus{
-    border: 1px solid var(--primary-text);
+    border: 1px solid var(--focus);
 }
 
 #add-project-desc-field label{
@@ -134,4 +134,12 @@
 
 #add-project-controls button:hover {
     background-color: var(--center-panel);
+}
+
+#add-project-controls #save-project-btn:active {
+    color: var(--focus);
+}
+
+#add-project-controls #cancel-project-btn:active {
+    color: var(--error);
 }
