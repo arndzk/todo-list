@@ -1,3 +1,4 @@
+@import './_dark-theme.css';
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
 #signature {
@@ -20,4 +21,9 @@
 #signature a:visited {
     text-decoration: none;
     color: inherit;
+}
+#signature a:hover {
+    text-decoration: none;
+    color: var(--focus);
+    transition: .25s;
 }

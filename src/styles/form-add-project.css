@@ -1,5 +1,9 @@
 @import '_dark-theme.css';
 
+.hidden {
+    display: none;
+}
+
 #add-project-container {
     position: absolute;
     margin: 0px;
@@ -61,14 +65,25 @@
     font-size: 16px;
 }
 
-#add-project-name-field input{
+#add-project-name-input {
     margin: 0px 10px 0px 10px;
     padding: 2px 5px 2px 5px;
     height: 30%;
     background-color: var(--background);
-    border: 1px solid var(--line);
     border-radius: 5px;
     color: var(--primary-text);
+}
+
+#add-project-name-field .form-input:focus{
+    border: 1px solid var(--focus);
+}
+
+#add-project-name-field .form-input {
+    border: 1px solid var(--line);
+}
+
+#add-project-name-field .empty-input {
+    border: 1px solid var(--error);
 }
 
 #add-project-name-field input:focus{
@@ -82,19 +97,26 @@
     flex-direction: column;
 }
 
-#add-project-desc-field textarea{
+#add-project-desc-input{
     resize: none;
     margin: 0px 10px 0px 10px;
     padding: 2px 5px 2px 5px;
     height: 90%;
     background-color: var(--background);
-    border: 1px solid var(--line);
     border-radius: 5px;
     color: var(--primary-text);
 }
 
-#add-project-desc-field textarea:focus{
+#add-project-desc-field .form-textarea:focus{
     border: 1px solid var(--focus);
+}
+
+#add-project-desc-field .form-textarea {
+    border: 1px solid var(--line);
+}
+
+#add-project-desc-field .empty-input {
+    border: 1px solid var(--error);
 }
 
 #add-project-desc-field label{
@@ -108,6 +130,10 @@
 
 #add-project-desc-field input{
     margin: 0px 10px 0px 10px;
+}
+
+#add-project-err-msg {
+    color: var(--error);
 }
 
 #add-project-controls {

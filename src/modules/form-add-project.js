@@ -1,6 +1,8 @@
 import createElement from '../utils/element-creator';
 import appendElement from '../utils/element-appender';
 import addListenerCancelProjectBtn from '../listeners/cancel-project-btn';
+import addListenerSaveProjectBtn from '../listeners/save-project-btn';
+import addListenerFormInput from '../listeners/form-input';
 
 const createProjectFormContainer = _ => {
     const projectFormContainer = createElement('div', 'add-project-container');
@@ -8,7 +10,8 @@ const createProjectFormContainer = _ => {
 }
 
 const createProjectFormBody = _ => {
-    const projectFormBody = createElement('div', 'add-project-form');
+    const projectFormBody = createElement('form', 'add-project-form');
+    projectFormBody.setAttribute('action', '');
     appendElement('add-project-container', projectFormBody);
 }
 
@@ -39,6 +42,8 @@ const createProjectFormInputs = _ => {
     const projectFormDescTextArea = createElement('textarea', 'add-project-desc-input', 'form-textarea');
     projectFormDescTextArea.placeholder = `Enter your new project's description`;
     appendElement('add-project-desc-field', projectFormDescTextArea);
+    const projectFormErrMsg = createElement('div', 'add-project-err-msg', 'hidden', 'Please fill out the empty field(s).');
+    appendElement('add-project-inputs', projectFormErrMsg)
 }
 
 const createProjectFormControls = _ => {
@@ -56,6 +61,9 @@ const createAddProjectForm = _ => {
     createProjectFormHeader();
     createProjectFormInputs();
     createProjectFormControls();
+    addListenerFormInput('add-project-name-input');
+    addListenerFormInput('add-project-desc-input');
+    addListenerSaveProjectBtn();
     addListenerCancelProjectBtn();
 }
 
