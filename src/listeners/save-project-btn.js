@@ -11,18 +11,15 @@ const addListenerSaveProjectBtn = _ => {
     saveProjectBtn.addEventListener('click', (e) => {
         console.log(`${e}`)
         e.preventDefault();
-        console.log('default prevented');
         const form = selectElement('add-project-form');
         const name = selectElement('add-project-name-input');
         const desc = selectElement('add-project-desc-input');
         const errMsg = selectElement('add-project-err-msg');
-        console.log(`${name} ${desc}`)
         if (
             validateTextInput(regEx.name, name) === true
             &&
             validateTextInput(regEx.description, desc) === true
         ) {
-            console.log(`${name.value} ${desc.value}`);
             errMsg.classList.add('hidden');
         } else {
             if (errMsg.classList.contains('hidden')) {
@@ -37,7 +34,6 @@ const addListenerSaveProjectBtn = _ => {
             }
         }
     });
-    console.log('event listener added! save')
 }
 
 export default addListenerSaveProjectBtn;
