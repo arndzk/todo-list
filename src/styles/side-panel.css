@@ -49,6 +49,7 @@
 
 .project-list-item:hover {
     background-color: var(--card);
+    cursor: pointer;
 }
 
 .project-list-item-focused {
