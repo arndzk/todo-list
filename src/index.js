@@ -16,13 +16,13 @@ const setupLocalStorage = (projectsArray) => {
     const data = JSON.parse(localStorage.getItem('projects') || '[]');
     console.log(`${data}`);
     if (data.length === 0) {
-        projectsArray.push(createProject('Test Project Name', 'Test Project Desc'));
-        projectsArray.forEach(project => {
-            data.push({
-                name: project.getProjectName(),
-                desc: project.getProjectDesc()
-            });
-        });
+        // projectsArray.push(createProject('Test Project Name', 'Test Project Desc'));
+        // projectsArray.forEach(project => {
+        //     data.push({
+        //         name: project.getProjectName(),
+        //         desc: project.getProjectDesc()
+        //     });
+        // });
         localStorage.setItem('projects', JSON.stringify(data));
     } else {
         data.forEach(project => {

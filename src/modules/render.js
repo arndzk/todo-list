@@ -27,6 +27,12 @@ const renderProjects = (projectsArray) => {
         console.log('listener added!')
         i++;
     })
+    // const allProjects = [...document.querySelectorAll('.project-list-item')];
+    // if (allProjects.length === 1) {
+    //     allProjects[0].classList.add('project-list-item-focused');
+    // } else {
+    //     allProjects[allProjects.length - 1].classList.add('project-list-item-focused');
+    // }
     console.log('projectsList rendered!')
 }
 
