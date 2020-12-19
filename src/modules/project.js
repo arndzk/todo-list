@@ -1,9 +1,12 @@
-const addProject = (name, desc) => {
+const createProject = (name, desc) => {
+    console.log('creating project...')
     const projectTasks = [];
     let projectName = name;
     let projectDesc = desc;
 
-    const getProjectName = _ => projectName;
+    const getProjectName = _ => {
+        return projectName;
+    }
     const getProjectDesc = _ => projectDesc;
     const getProjectTasks = _ => projectTasks;
 
@@ -27,4 +30,4 @@ const addProject = (name, desc) => {
     }
 }
 
-export default addProject;
+export default createProject;

@@ -21,6 +21,34 @@
 
 #projects-list {
     min-height: 500px;
+    min-width: 400px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+}
+
+.project-list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px 10px 5px 0px;
+    padding: 5px 0px 5px 5px;
+    width: 60%;
+    height: 25px;
+    text-align: left;
+    font-size: 18px;
+    color: var(--primary-text);
+    border-radius: 5px;
+}
+
+.project-list-item:hover {
+    background-color: var(--card);
+}
+
+.project-list-item-focused {
+    background-color: var(--card);
 }
 
 #projects-controls {

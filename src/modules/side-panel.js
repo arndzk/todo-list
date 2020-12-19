@@ -7,7 +7,7 @@ const createProjectsHeader = _ => {
     appendElement('side-panel', projectsHeader);
 }
 const createProjectsList = _ => {
-    const projectsList = createElement('div', 'projects-list');
+    const projectsList = createElement('ul', 'projects-list');
     appendElement('side-panel', projectsList);
 }
 const createProjectsControls = _ => {
@@ -17,11 +17,11 @@ const createProjectsControls = _ => {
     appendElement('projects-controls', addProjectBtn);
 }
 
-const loadSidePanel = _ => {
+const loadSidePanel = (projectsArray) => {
     createProjectsHeader();
     createProjectsList();
     createProjectsControls();
-    addListenerAddProjectBtn();
+    addListenerAddProjectBtn(projectsArray);
 }
 
 export default loadSidePanel;

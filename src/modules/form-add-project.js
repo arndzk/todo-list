@@ -55,7 +55,7 @@ const createProjectFormControls = _ => {
     appendElement('add-project-controls', cancelProjectBtn);
 }
 
-const createAddProjectForm = _ => {
+const createAddProjectForm = () => {
     createProjectFormContainer();
     createProjectFormBody();
     createProjectFormHeader();
