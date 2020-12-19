@@ -49,6 +49,7 @@
 
 .project-list-item-focused {
     background-color: var(--card);
+    color: var(--focus);
 }
 
 #projects-controls {

@@ -15,7 +15,7 @@ const renderProjects = (projectsArray) => {
     projectsArray.forEach(project => {
         const projectDiv = createElement(
             'li', 
-            `project-list-item-${i+1}`, 
+            `project-list-item-${i}`, 
             'project-list-item',
             project.getProjectName()
         );
@@ -23,7 +23,7 @@ const renderProjects = (projectsArray) => {
         appendElement('projects-list', projectDiv);
         console.log('project appended!');
         console.log('adding listener...')
-        addListenerProjectListItem(`project-list-item-${i+1}`);
+        addListenerProjectListItem(`project-list-item-${i}`);
         console.log('listener added!')
         i++;
     })
