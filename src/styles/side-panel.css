@@ -57,6 +57,24 @@
     color: var(--focus);
 }
 
+.item-list-name {
+    flex-grow: 3;
+}
+
+.delete-project-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-project-icon {
+    color: var(--secondary-text);
+}
+
+.delete-project-icon:hover {
+    color: var(--error);
+}
+
 #projects-controls {
     margin: 0px 30px 0px 30px;
     text-align: left;
