@@ -61,7 +61,23 @@
     flex-grow: 3;
 }
 
+.edit-project-btn {
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-project-icon {
+    color: var(--secondary-text);
+}
+
+.edit-project-icon:hover {
+    color: var(--focus);
+}
+
 .delete-project-btn {
+    margin-right: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,6 +89,10 @@
 
 .delete-project-icon:hover {
     color: var(--error);
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 #projects-controls {

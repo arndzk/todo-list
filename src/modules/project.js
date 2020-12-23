@@ -1,5 +1,4 @@
 const createProject = (name, desc) => {
-    console.log('creating project...')
     const projectTasks = [];
     let projectName = name;
     let projectDesc = desc;

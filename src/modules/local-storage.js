@@ -2,7 +2,6 @@ import createProject from './project';
 import { projectsArray } from '../index';
 
 const setupLocalStorage = () => {
-    console.log('setting up database...')
     const data = JSON.parse(localStorage.getItem('projects') || '[]');
     if (data.length === 0) {
         data.push(createProject('Test Project Name', 'Test Project Desc'));
@@ -11,7 +10,6 @@ const setupLocalStorage = () => {
 }
 
 const updateLocalStorage = () => {
-    console.log('updating localStorage...')
     localStorage.clear();
     const data = [];
     projectsArray.forEach(project => {
@@ -21,7 +19,6 @@ const updateLocalStorage = () => {
         })
     })
     localStorage.setItem('projects', JSON.stringify(data));
-    console.log('updated data set in localStorage');
     updateProjectsArray();
 }
 
@@ -34,11 +31,8 @@ const updateProjectsArray = () => {
 }
 
 const pushProjectToArray = (project) => {
-    console.log('pushing project to projectsArray...')
     projectsArray.push(project);
-    console.log('pushed to array')
     updateLocalStorage(projectsArray);
-    console.log('localStorage updated!')
 }
 
 export {
