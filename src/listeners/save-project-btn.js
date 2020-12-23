@@ -5,8 +5,8 @@ import {pushProjectToArray, updateLocalStorage } from '../modules/local-storage'
 import { projectsArray } from '../index';
 
 const regEx = {
-    name: /^[a-zA-Z0-9À-ÿ\s]{1,20}$/,
-    description: /^[a-zA-Z0-9À-ÿ\s]{1,60}$/,
+    name: /^[.,:!?'-À-ÿ\w\s]{1,20}$/,
+    description: /^[.,:!?'-À-ÿ\w\s]{1,60}$/,
 }
 
 const addListenerSaveProjectBtn = () => {
