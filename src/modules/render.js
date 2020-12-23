@@ -5,7 +5,6 @@ import addListenerProjectListItem from '../listeners/project-list-item';
 import { switchProjectFocus } from './focus';
 
 const renderProjects = (projectsArray, projectToFocus) => {
-    console.log('rendering projects...')
     const projectsList = selectElement('projects-list');
     while (projectsList.lastElementChild) {
         projectsList.removeChild(projectsList.lastElementChild);

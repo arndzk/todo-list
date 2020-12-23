@@ -2,10 +2,7 @@ import selectElement from '../utils/element-selector';
 import { projectsArray } from '../index';
 
 const switchProjectFocus = (projectToFocus) => {
-    console.log('changing focus');
-    console.log('getting project list')
     const projectList = selectElement('projects-list');
-    console.log('getting projects dom elements')
     const listItems = projectList.getElementsByTagName('li');
     // Make sure all list items are unfocused
     for (let i = 0; i < listItems.length; i++) {
@@ -17,12 +14,8 @@ const switchProjectFocus = (projectToFocus) => {
         let listItemEditButton = selectElement(`edit-project-btn-${i + 1}`);
         listItemEditButton.classList.add('hidden');
     }
-    console.log('all projects are now unfocused');
-    console.log(`project to focus: ${projectToFocus}`);
     const project = selectElement(projectToFocus);
-    console.log(project);
     project.classList.add('project-list-item-focused');
-    console.log('DOM element focused')
     let listIndex;
     for (let i = 0; i < listItems.length; i++) {
         if (project.textContent === listItems[i].textContent) {
@@ -36,7 +29,6 @@ const switchProjectFocus = (projectToFocus) => {
     projectDesc.textContent = '';
     projectDesc.textContent = projectsArray[listIndex].getProjectDesc();
 
-    console.log(listIndex);
     const projectDeleteButton = selectElement(`delete-project-btn-${listIndex + 1}`);
     const projectEditButton = selectElement(`edit-project-btn-${listIndex + 1}`);
     projectDeleteButton.classList.remove('hidden');
