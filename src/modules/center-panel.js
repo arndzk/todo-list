@@ -11,8 +11,12 @@ const createProjectHeader = _ => {
 }
 
 const createTaskList = _ => {
-    const taskList = createElement('div', 'task-list');
-    appendElement('center-panel', taskList);
+    const taskListContainer = createElement('div', 'task-list-container');
+    const taskList = createElement('ul', 'task-list');
+    const taskListControls = createElement('div', 'task-list-controls');
+    appendElement('center-panel', taskListContainer);
+    appendElement('task-list-container', taskList);
+    appendElement('task-list-container', taskListControls);
 }
 
 const loadCenterPanel = _ => {

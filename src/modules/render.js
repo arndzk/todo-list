@@ -3,6 +3,7 @@ import appendElement from '../utils/element-appender';
 import selectElement from '../utils/element-selector';
 import addListenerProjectListItem from '../listeners/project-list-item';
 import { switchProjectFocus } from './focus';
+import addListenerAddTaskBtn from '../listeners/add-task-btn';
 
 const renderProjects = (projectsArray, projectToFocus) => {
     const projectsList = selectElement('projects-list');
@@ -12,7 +13,7 @@ const renderProjects = (projectsArray, projectToFocus) => {
     let i = 0;
     projectsArray.forEach(project => {
         const projectDiv = createElement('li', `project-list-item-${i}`, 'project-list-item');
-        const listItemName = createElement('span', `item-list-name--${i+1}`, 'item-list-name', project.getProjectName());
+        const listItemName = createElement('span', `item-list-name-${i+1}`, 'item-list-name', project.getProjectName());
         const deleteProjectBtn = createElement('div', `delete-project-btn-${i+1}`, 'delete-project-btn');
         const deleteProjectIcon = createElement('span', `delete-project-icon-${i+1}`, 'material-icons', 'delete');
         deleteProjectIcon.classList.add('delete-project-icon');
@@ -33,7 +34,28 @@ const renderProjects = (projectsArray, projectToFocus) => {
     const listItems = projectsList.getElementsByTagName('li');
     if(listItems.length > 0) {
         switchProjectFocus(projectToFocus);
+        renderTasks(projectsArray);
     }
+}
+
+const renderTasks = (projectsArray) => {
+    const taskList = selectElement('task-list');
+    while (taskList.lastElementChild) {
+        taskList.removeChild(taskList.lastElementChild);
+    }
+    const taskListControls = selectElement('task-list-controls');
+    while (taskListControls.lastElementChild) {
+        taskList.removeChild(taskList.lastElementChild);
+    }
+    const addTaskBtn = createElement('button', 'add-task-btn', null, 'Add Task');
+    appendElement('task-list-controls', addTaskBtn);
+    addListenerAddTaskBtn();
+    // let i = 0;
+    // projectsArray.forEach(project => {
+    //     const taskDiv = createElement('li', `task-list-item-${i}`, `task-list-item`);
+    //     const taskItemName = createElement('span', `task-name-${i+1}, 'task-name`, project.getProjectTasks)
+    //     i++
+    // })
 }
 
 export default renderProjects;
