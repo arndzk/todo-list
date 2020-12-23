@@ -1,7 +1,11 @@
 import selectElement from '../utils/element-selector';
 import { validateTextInput } from '../utils/validator';
 import createProject from '../modules/project';
-import {pushProjectToArray, updateLocalStorage } from '../modules/local-storage';
+import { pushProjectToArray, updateLocalStorage } from '../modules/local-storage';
+import renderProjects from '../modules/render';
+import { projectsArray } from '../index';
+import removeElement from '../utils/element-remover';
+import { switchProjectFocus } from '../modules/focus';
 
 const regEx = {
     name: /^[.,:!?'-À-ÿ\w\s]{1,20}$/,
@@ -25,7 +29,7 @@ const addListenerSaveProjectBtn = () => {
             const newProject = createProject(name.value, desc.value);
             pushProjectToArray(newProject);
             updateLocalStorage();
-            window.location.reload();
+            closeForm();
         } else {
             if (errMsg.classList.contains('hidden')) {
                 errMsg.classList.remove('hidden');
@@ -38,6 +42,17 @@ const addListenerSaveProjectBtn = () => {
             }
         }
     });
+}
+
+const closeForm = _ => {
+    const projectList = selectElement('projects-list');
+    const listItems = projectList.getElementsByTagName('li');
+    renderProjects(projectsArray, `project-list-item-${listItems.length + 1}`);
+    const sidePanel = document.getElementById('side-panel');
+    sidePanel.classList.remove('inactive', 'blurred');
+    const centerPanel = document.getElementById('center-panel');
+    centerPanel.classList.remove('inactive', 'blurred');
+    removeElement('main', 'add-project-container');
 }
 
 export default addListenerSaveProjectBtn;

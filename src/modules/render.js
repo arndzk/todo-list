@@ -2,19 +2,17 @@ import createElement from '../utils/element-creator';
 import appendElement from '../utils/element-appender';
 import selectElement from '../utils/element-selector';
 import addListenerProjectListItem from '../listeners/project-list-item';
+import { switchProjectFocus } from './focus';
 
-const renderProjects = (projectsArray) => {
+const renderProjects = (projectsArray, projectToFocus) => {
+    console.log('rendering projects...')
     const projectsList = selectElement('projects-list');
     while (projectsList.lastElementChild) {
         projectsList.removeChild(projectsList.lastElementChild);
     }
     let i = 0;
     projectsArray.forEach(project => {
-        const projectDiv = createElement(
-            'li', 
-            `project-list-item-${i}`, 
-            'project-list-item'
-        );
+        const projectDiv = createElement('li', `project-list-item-${i}`, 'project-list-item');
         const listItemName = createElement('span', `item-list-name--${i+1}`, 'item-list-name', project.getProjectName());
         const deleteProjectBtn = createElement('div', `delete-project-btn-${i+1}`, 'delete-project-btn');
         const deleteProjectIcon = createElement('span', `delete-project-icon-${i+1}`, 'material-icons', 'delete');
@@ -33,6 +31,7 @@ const renderProjects = (projectsArray) => {
         addListenerProjectListItem(`project-list-item-${i}`);
         i++;
     })
+    switchProjectFocus(projectToFocus);
 }
 
 export default renderProjects;
