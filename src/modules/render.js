@@ -31,7 +31,10 @@ const renderProjects = (projectsArray, projectToFocus) => {
         addListenerProjectListItem(`project-list-item-${i}`);
         i++;
     })
-    switchProjectFocus(projectToFocus);
+    const listItems = projectsList.getElementsByTagName('li');
+    if(listItems.length > 0) {
+        switchProjectFocus(projectToFocus);
+    }
 }
 
 export default renderProjects;
