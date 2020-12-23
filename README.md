@@ -1,8 +1,8 @@
-#todo-list
+# todo-list
 
-##Version 1.0
+## Version 1.0
 
-###Requirements Checklist:
+### Requirements Checklist:
 
 - [ ] it should have a place to store ~~todos~~ projects
 - [ ] it should have a way to display ~~todos~~ projects
