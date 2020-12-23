@@ -6,6 +6,7 @@ import { switchProjectFocus } from './focus';
 import addListenerAddTaskBtn from '../listeners/add-task-btn';
 
 const renderProjects = (projectsArray, projectToFocus) => {
+    console.log('rendering projects...');
     const projectsList = selectElement('projects-list');
     while (projectsList.lastElementChild) {
         projectsList.removeChild(projectsList.lastElementChild);
@@ -39,17 +40,16 @@ const renderProjects = (projectsArray, projectToFocus) => {
 }
 
 const renderTasks = (projectsArray) => {
+    console.log('rendering tasks');
     const taskList = selectElement('task-list');
-    while (taskList.lastElementChild) {
-        taskList.removeChild(taskList.lastElementChild);
-    }
-    const taskListControls = selectElement('task-list-controls');
-    while (taskListControls.lastElementChild) {
-        taskList.removeChild(taskList.lastElementChild);
-    }
-    const addTaskBtn = createElement('button', 'add-task-btn', null, 'Add Task');
-    appendElement('task-list-controls', addTaskBtn);
-    addListenerAddTaskBtn();
+    // while (taskList.lastElementChild) {
+    //     taskList.removeChild(taskList.lastElementChild);
+    // }
+    //const taskListControls = selectElement('task-list-controls');
+    //taskListControls.removeChild('add-task-btn');
+    //const addTaskBtn = createElement('button', 'add-task-btn', null, 'Add Task');
+    //appendElement('task-list-controls', addTaskBtn);
+    //addListenerAddTaskBtn();
     // let i = 0;
     // projectsArray.forEach(project => {
     //     const taskDiv = createElement('li', `task-list-item-${i}`, `task-list-item`);

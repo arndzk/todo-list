@@ -7,8 +7,10 @@ const createProjectsHeader = _ => {
     appendElement('side-panel', projectsHeader);
 }
 const createProjectsList = _ => {
+    const projectsListContainer = createElement('div', 'projects-list-container');
+    appendElement('side-panel', projectsListContainer);
     const projectsList = createElement('ul', 'projects-list');
-    appendElement('side-panel', projectsList);
+    appendElement('projects-list-container', projectsList);
 }
 const createProjectsControls = _ => {
     const projectsControls = createElement('div', 'projects-controls');
