@@ -4,11 +4,11 @@
 
 ### Requirements Checklist:
 
-- [ ] it should have a place to store ~~todos~~ projects
-- [ ] it should have a way to display ~~todos~~ projects
-- [ ] it should have a way to add a ~~todo~~ project
-  - [ ] it should have a way to add a project name
-  - [ ] it should have a way to add a project description
+- [x] it should have a place to store ~~todos~~ projects
+- [x] it should have a way to display ~~todos~~ projects
+- [x] it should have a way to add a ~~todo~~ project
+  - [x] it should have a way to add a project name
+  - [x] it should have a way to add a project description
 - [ ] it should have a way to edit a ~~todo~~ project
 - [ ] it should have a way to remove a ~~todo~~ project
 - [ ] it should have a way to display tasks
