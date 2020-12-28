@@ -4,6 +4,7 @@ import selectElement from '../utils/element-selector';
 import addListenerProjectListItem from '../listeners/project-list-item';
 import { switchProjectFocus } from './focus';
 import addListenerAddTaskBtn from '../listeners/add-task-btn';
+import addListenerProjectDeleteBtn from '../listeners/delete-project-btn';
 
 const renderProjects = (projectsArray, projectToFocus) => {
     console.log('rendering projects...');
@@ -30,6 +31,8 @@ const renderProjects = (projectsArray, projectToFocus) => {
         appendElement(`project-list-item-${i}`, deleteProjectBtn);
         appendElement(`delete-project-btn-${i+1}`, deleteProjectIcon);
         addListenerProjectListItem(`project-list-item-${i}`);
+        console.log('trying to add delete listener')
+        addListenerProjectDeleteBtn(`delete-project-btn-${i+1}`, i);
         i++;
     })
     const listItems = projectsList.getElementsByTagName('li');
