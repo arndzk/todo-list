@@ -4,7 +4,7 @@
     display: none;
 }
 
-#add-project-container {
+.form-container {
     position: absolute;
     margin: 0px;
     background-color: rgba(0,0,0,0.3);
@@ -16,7 +16,7 @@
     align-items: center;
 }
 
-#add-project-form {
+.form-body {
     height: 66%;
     width: 33%;
     margin: auto;
@@ -26,7 +26,7 @@
     flex-direction: column;
 }
 
-#add-project-header {
+.form-header {
     margin: 10px 30px 10px 30px;
     display: flex;
     flex-direction: row;
@@ -38,25 +38,25 @@
     border-bottom: 1px solid var(--line);
 }
 
-#add-project-header-text {
+.header-text {
     padding-left: 10px;
 }
 
-#add-project-inputs {
+.form-inputs {
     display: flex;
     flex-direction: column;
     flex-grow: 4;
     justify-content: space-evenly;
 }
 
-#add-project-name-field {
+.project-name-input-field {
     margin: 10px 30px 10px 30px;
     flex-grow: 0.1;
     display: flex;
     flex-direction: column;
 }
 
-#add-project-name-field label{
+.project-name-input-field label{
     padding-left: 10px;
     margin-bottom: 5px;
     display: flex;
@@ -65,7 +65,7 @@
     font-size: 16px;
 }
 
-#add-project-name-input {
+.form-input {
     margin: 0px 10px 0px 10px;
     padding: 2px 5px 2px 5px;
     height: 30%;
@@ -74,19 +74,19 @@
     color: var(--primary-text);
 }
 
-#add-project-name-field .form-input:focus{
+.form-input:focus{
     border: 1px solid var(--focus);
 }
 
-#add-project-name-field .form-input {
+.form-input {
     border: 1px solid var(--line);
 }
 
-#add-project-name-field .empty-input {
+.empty-input {
     border: 1px solid var(--error);
 }
 
-#add-project-name-field input:focus{
+.form-input input:focus{
     border: 1px solid var(--focus);
 }
 
@@ -136,7 +136,7 @@
     color: var(--error);
 }
 
-#add-project-controls {
+.form-controls {
     margin: 10px 30px 10px 30px;
     display: flex;
     flex-direction: row;
@@ -144,6 +144,9 @@
     align-items: center;
     flex-grow: 0.2;
     border-top: 1px solid var(--line);
+}
+
+#add-project-controls {
 }
 
 #add-project-controls button {

@@ -5,27 +5,27 @@ import addListenerSaveProjectBtn from '../listeners/save-project-btn';
 import addListenerFormInput from '../listeners/form-input';
 
 const createProjectFormContainer = _ => {
-    const projectFormContainer = createElement('div', 'add-project-container');
+    const projectFormContainer = createElement('div', 'add-project-container', 'form-container');
     appendElement('main', projectFormContainer);
 }
 
 const createProjectFormBody = _ => {
-    const projectFormBody = createElement('form', 'add-project-form');
+    const projectFormBody = createElement('form', 'add-project-form', 'form-body');
     projectFormBody.setAttribute('action', '');
     appendElement('add-project-container', projectFormBody);
 }
 
 const createProjectFormHeader = _ => {
-    const projectFormHeader = createElement('div', 'add-project-header');
+    const projectFormHeader = createElement('div', 'add-project-header', 'form-header');
     appendElement('add-project-form', projectFormHeader);
-    const projectFormHeaderText = createElement('span', 'add-project-header-text', null, 'Add Project');
+    const projectFormHeaderText = createElement('span', 'add-project-header-text', 'header-text', 'Add Project');
     appendElement('add-project-header', projectFormHeaderText);
 }
 
 const createProjectFormInputs = _ => {
-    const projectFormInputs = createElement('div', 'add-project-inputs');
+    const projectFormInputs = createElement('div', 'add-project-inputs', 'form-inputs');
     appendElement('add-project-form', projectFormInputs);
-    const projectFormNameField = createElement('div', 'add-project-name-field');
+    const projectFormNameField = createElement('div', 'add-project-name-field', 'project-name-input-field');
     appendElement('add-project-inputs', projectFormNameField);
     const projectFormNameLabel = createElement('label', 'add-project-name-label', null, 'Project Name');
     appendElement('add-project-name-field', projectFormNameLabel);
@@ -34,7 +34,7 @@ const createProjectFormInputs = _ => {
     projectFormNameInput.type = 'text';
     projectFormNameInput.placeholder = `Enter your new project's name`;
     appendElement('add-project-name-field', projectFormNameInput);
-    const projectFormDescField = createElement('div', 'add-project-desc-field');
+    const projectFormDescField = createElement('div', 'add-project-desc-field', 'project-desc-input-field');
     appendElement('add-project-inputs', projectFormDescField);
     const projectFormDescLabel = createElement('label', 'add-project-desc-label', null, 'Project Description');
     appendElement('add-project-desc-field', projectFormDescLabel);
@@ -47,7 +47,7 @@ const createProjectFormInputs = _ => {
 }
 
 const createProjectFormControls = _ => {
-    const projectFormControls = createElement('div', 'add-project-controls');
+    const projectFormControls = createElement('div', 'add-project-controls', 'form-controls');
     appendElement('add-project-form', projectFormControls);
     const saveProjectBtn = createElement('button', 'save-project-btn', null, 'Save');
     appendElement('add-project-controls', saveProjectBtn);

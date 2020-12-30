@@ -10,7 +10,7 @@
   - [x] it should have a way to add a project name
   - [x] it should have a way to add a project description
 - [ ] it should have a way to edit a ~~todo~~ project
-- [ ] it should have a way to remove a ~~todo~~ project
+- [x] it should have a way to remove a ~~todo~~ project
 - [ ] it should have a way to display tasks
 - [ ] it should have a way to add a task
  - [ ] it should have a way to add a task name
