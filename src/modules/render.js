@@ -8,7 +8,7 @@ import addListenerProjectDeleteBtn from '../listeners/delete-project-btn';
 import addListenerProjectEditBtn from '../listeners/edit-project-btn';
 
 const renderProjects = (projectsArray, projectToFocus) => {
-    console.log('rendering projects...');
+    console.log('rendering projects...')
     const projectsList = selectElement('projects-list');
     while (projectsList.lastElementChild) {
         projectsList.removeChild(projectsList.lastElementChild);
@@ -32,22 +32,19 @@ const renderProjects = (projectsArray, projectToFocus) => {
         appendElement(`project-list-item-${i}`, deleteProjectBtn);
         appendElement(`delete-project-btn-${i+1}`, deleteProjectIcon);
         addListenerProjectListItem(`project-list-item-${i}`);
-        console.log('trying to add delete listener')
         addListenerProjectDeleteBtn(`delete-project-btn-${i+1}`, i);
-        console.log('delete listener added')
         addListenerProjectEditBtn(`edit-project-btn-${i+1}`, i);
-        console.log('edit listener added')
         i++;
     })
     const listItems = projectsList.getElementsByTagName('li');
     if(listItems.length > 0) {
+        console.log('switching project focus')
         switchProjectFocus(projectToFocus);
-        renderTasks(projectsArray);
+        //renderTasks(projectsArray);
     }
 }
 
 const renderTasks = (projectsArray) => {
-    console.log('rendering tasks');
     const taskList = selectElement('task-list');
     // while (taskList.lastElementChild) {
     //     taskList.removeChild(taskList.lastElementChild);

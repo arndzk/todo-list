@@ -1,8 +1,9 @@
 import createElement from '../utils/element-creator';
 import appendElement from '../utils/element-appender';
 import addListenerCancelProjectEditBtn from '../listeners/cancel-project-edit-btn';
-import addListenerSaveProjectBtn from '../listeners/save-project-btn';
+import addListenerSaveProjectEditBtn from '../listeners/save-project-edit-btn';
 import addListenerFormInput from '../listeners/form-input';
+import { projectsArray } from '../index';
 
 const createProjectFormContainer = _ => {
     const projectFormContainer = createElement('div', 'edit-project-container', 'form-container');
@@ -22,7 +23,7 @@ const createProjectFormHeader = _ => {
     appendElement('edit-project-header', projectFormHeaderText);
 }
 
-const createProjectFormInputs = _ => {
+const createProjectFormInputs = (indexOfElement) => {
     const projectFormInputs = createElement('div', 'edit-project-inputs', 'form-inputs');
     appendElement('edit-project-form', projectFormInputs);
     const projectFormNameField = createElement('div', 'edit-project-name-field', 'project-name-input-field');
@@ -30,9 +31,8 @@ const createProjectFormInputs = _ => {
     const projectFormNameLabel = createElement('label', 'edit-project-name-label', null, 'Project Name');
     appendElement('edit-project-name-field', projectFormNameLabel);
     projectFormNameLabel.htmlFor = 'edit-project-name-input';
-    const projectFormNameInput = createElement('input', 'edit-project-name-input', 'form-input');
-    projectFormNameInput.type = 'text';
-    projectFormNameInput.placeholder = `Enter your new project's name`;
+    const projectFormNameInput = createElement('textarea', 'edit-project-name-input', 'form-input');
+    projectFormNameInput.textContent = projectsArray[indexOfElement].getProjectName();
     appendElement('edit-project-name-field', projectFormNameInput);
     const projectFormDescField = createElement('div', 'edit-project-desc-field', 'project-desc-input-field');
     appendElement('edit-project-inputs', projectFormDescField);
@@ -40,7 +40,7 @@ const createProjectFormInputs = _ => {
     appendElement('edit-project-desc-field', projectFormDescLabel);
     projectFormDescLabel.htmlFor = 'edit-project-desc-textarea';
     const projectFormDescTextArea = createElement('textarea', 'edit-project-desc-input', 'form-textarea');
-    projectFormDescTextArea.placeholder = `Enter your new project's description`;
+    projectFormDescTextArea.textContent = projectsArray[indexOfElement].getProjectDesc();
     appendElement('edit-project-desc-field', projectFormDescTextArea);
     const projectFormErrMsg = createElement('div', 'edit-project-err-msg', 'error-msg', 'Please fill out the empty field(s).');
     projectFormErrMsg.classList.add('hidden');
@@ -56,15 +56,15 @@ const createProjectFormControls = _ => {
     appendElement('edit-project-controls', cancelProjectEditBtn);
 }
 
-const createEditProjectForm = () => {
+const createEditProjectForm = (indexOfElement) => {
     createProjectFormContainer();
     createProjectFormBody();
     createProjectFormHeader();
-    createProjectFormInputs();
+    createProjectFormInputs(indexOfElement);
     createProjectFormControls();
     addListenerFormInput('edit-project-name-input');
     addListenerFormInput('edit-project-desc-input');
-    //addListenerSaveProjectBtn();
+    addListenerSaveProjectEditBtn(indexOfElement);
     addListenerCancelProjectEditBtn();
 }
 
