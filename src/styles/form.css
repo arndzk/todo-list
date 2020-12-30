@@ -90,14 +90,14 @@
     border: 1px solid var(--focus);
 }
 
-#add-project-desc-field {
+.project-desc-input-field {
     margin: 10px 30px 10px 30px;
     flex-grow: 3;
     display: flex;
     flex-direction: column;
 }
 
-#add-project-desc-input{
+.form-textarea{
     resize: none;
     margin: 0px 10px 0px 10px;
     padding: 2px 5px 2px 5px;
@@ -107,19 +107,19 @@
     color: var(--primary-text);
 }
 
-#add-project-desc-field .form-textarea:focus{
+.form-textarea:focus{
     border: 1px solid var(--focus);
 }
 
-#add-project-desc-field .form-textarea {
+.form-textarea {
     border: 1px solid var(--line);
 }
 
-#add-project-desc-field .empty-input {
+.empty-input {
     border: 1px solid var(--error);
 }
 
-#add-project-desc-field label{
+.project-desc-input-field label{
     padding-left: 10px;
     margin-bottom: 5px;
     display: flex;
@@ -128,11 +128,11 @@
     font-size: 16px;
 }
 
-#add-project-desc-field input{
+.project-desc-input-field input{
     margin: 0px 10px 0px 10px;
 }
 
-#add-project-err-msg {
+.err-msg {
     color: var(--error);
 }
 
@@ -146,10 +146,7 @@
     border-top: 1px solid var(--line);
 }
 
-#add-project-controls {
-}
-
-#add-project-controls button {
+.form-controls button {
     padding: 5px;
     margin: 5px;
     max-height: 32px;
@@ -161,14 +158,22 @@
     font-size: 14px;
 }
 
-#add-project-controls button:hover {
+.form-controls button:hover {
     background-color: var(--center-panel);
 }
 
-#add-project-controls #save-project-btn:active {
+.form-controls #save-project-btn:active {
     color: var(--focus);
 }
 
-#add-project-controls #cancel-project-btn:active {
+.form-controls #save-project-edit-btn:active {
+    color: var(--focus);
+}
+
+.form-controls #cancel-project-btn:active {
+    color: var(--error);
+}
+
+.form-controls #cancel-project-edit-btn:active {
     color: var(--error);
 }

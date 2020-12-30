@@ -42,7 +42,8 @@ const createProjectFormInputs = _ => {
     const projectFormDescTextArea = createElement('textarea', 'edit-project-desc-input', 'form-textarea');
     projectFormDescTextArea.placeholder = `Enter your new project's description`;
     appendElement('edit-project-desc-field', projectFormDescTextArea);
-    const projectFormErrMsg = createElement('div', 'edit-project-err-msg', 'hidden', 'Please fill out the empty field(s).');
+    const projectFormErrMsg = createElement('div', 'edit-project-err-msg', 'error-msg', 'Please fill out the empty field(s).');
+    projectFormErrMsg.classList.add('hidden');
     appendElement('edit-project-inputs', projectFormErrMsg)
 }
 
