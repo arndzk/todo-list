@@ -9,7 +9,7 @@ const addListenerDeleteProjectBtn = (projectDeleteBtn, indexOfElement) => {
     deleteBtn.addEventListener('click', () => {
         projectsArray.splice(indexOfElement, 1);
         updateLocalStorage();
-        renderProjects(projectsArray, `project-list-item-0`);
+        renderProjects(projectsArray, `project-list-item-1`);;
     });
 }
 

@@ -42,7 +42,7 @@ const createProjectFormInputs = (indexOfElement) => {
     const projectFormDescTextArea = createElement('textarea', 'edit-project-desc-input', 'form-textarea');
     projectFormDescTextArea.textContent = projectsArray[indexOfElement].getProjectDesc();
     appendElement('edit-project-desc-field', projectFormDescTextArea);
-    const projectFormErrMsg = createElement('div', 'edit-project-err-msg', 'error-msg', 'Please fill out the empty field(s).');
+    const projectFormErrMsg = createElement('div', 'edit-project-err-msg', 'err-msg', 'Please fill out the empty field(s).');
     projectFormErrMsg.classList.add('hidden');
     appendElement('edit-project-inputs', projectFormErrMsg)
 }

@@ -49,7 +49,7 @@ const closeForm = (indexOfElement) => {
     console.log('got project list')
     const listItems = projectList.getElementsByTagName('li');
     console.log('got project list items')
-    renderProjects(projectsArray, `project-list-item-${indexOfElement}`);
+    renderProjects(projectsArray, `project-list-item-${indexOfElement+1}`);
     console.log('re-rendered projects')
     const sidePanel = document.getElementById('side-panel');
     console.log('got side panel')

@@ -6,6 +6,7 @@ const addListenerProjectListItem = (projectListItem) => {
     const listItem = selectElement(projectListItem);
     listItem.addEventListener('click', () => {
         const idOfElement = listItem.getAttribute('id');
+        console.log('is it here, maybe?')
         switchProjectFocus(idOfElement);
     });
 }

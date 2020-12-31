@@ -26,7 +26,7 @@ init();
 
 let projectsArray = [];
 setupLocalStorage(projectsArray);
-renderProjects(projectsArray, `project-list-item-0`);
+renderProjects(projectsArray, `project-list-item-1`);
 
 export {
     projectsArray
