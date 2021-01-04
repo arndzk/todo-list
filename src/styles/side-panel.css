@@ -119,31 +119,3 @@
     text-align: left;
     border-top: 1px solid var(--line);
 }
-
-#add-project-btn {
-    padding: 5px;
-    margin: 5px;
-    max-height: 32px;
-    border: none;
-    border-radius: 5px;
-    background-color: inherit;
-    color: var(--primary-text);
-    font-size: 14px;
-}
-
-#add-project-btn::before {
-    content: '+';
-    margin-right: 5px;
-}
-
-#add-project-btn:hover {
-    background-color: var(--center-panel);
-}
-
-#add-project-btn:active {
-    color: var(--focus);
-}
-
-.no-click {
-    pointer-events: none;
-}

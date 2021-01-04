@@ -1,5 +1,6 @@
 import selectElement from '../utils/element-selector';
 import { projectsArray } from '../index';
+import addEventListenerAddTaskBtn from '../listeners/add-task-btn';
 
 const switchProjectFocus = (projectToFocus) => {
     const projectList = selectElement('projects-list');
@@ -28,6 +29,12 @@ const switchProjectFocus = (projectToFocus) => {
     const projectDesc = selectElement('project-desc');
     projectDesc.textContent = '';
     projectDesc.textContent = projectsArray[listIndex].getProjectDesc();
+
+    const addTaskBtn = selectElement('add-task-btn');
+    console.log('selected add-task-btn');
+    addTaskBtn.outerHTML = addTaskBtn.outerHTML;
+    console.log('add-task-btn reset');
+    addEventListenerAddTaskBtn(listIndex);
 
     const projectDeleteButton = selectElement(`delete-project-btn-${listIndex + 1}`);
     const projectEditButton = selectElement(`edit-project-btn-${listIndex + 1}`);

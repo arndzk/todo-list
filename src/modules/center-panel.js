@@ -19,7 +19,7 @@ const createTaskList = _ => {
 
 const createTaskListControls = _ => {
     const taskListControls = createElement('div', 'task-list-controls');
-    const addTaskButton = createElement('button', 'add-task-btn', null, 'Add Task');
+    const addTaskButton = createElement('button', 'add-task-btn', 'btn', 'Add Task');
     appendElement('task-list-container', taskListControls);
     appendElement('task-list-controls', addTaskButton);
 }
