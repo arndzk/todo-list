@@ -1,11 +1,9 @@
 import selectElement from '../utils/element-selector';
 import { validateTextInput } from '../utils/validator';
-import createProject from '../modules/project';
-import { pushProjectToArray, updateLocalStorage } from '../modules/local-storage';
+import { updateLocalStorage } from '../modules/local-storage';
 import renderProjects from '../modules/render';
 import { projectsArray } from '../index';
 import removeElement from '../utils/element-remover';
-import { switchProjectFocus } from '../modules/focus';
 
 const regEx = {
     name: /^[.,:!?'-À-ÿ\w\s]{1,20}$/,
@@ -44,21 +42,11 @@ const addListenerSaveProjectEditBtn = (indexOfElement) => {
 }
 
 const closeForm = (indexOfElement) => {
-    console.log('closing form')
-    const projectList = selectElement('projects-list');
-    console.log('got project list')
-    const listItems = projectList.getElementsByTagName('li');
-    console.log('got project list items')
     renderProjects(projectsArray, `project-list-item-${indexOfElement+1}`);
-    console.log('re-rendered projects')
     const sidePanel = document.getElementById('side-panel');
-    console.log('got side panel')
     sidePanel.classList.remove('inactive', 'blurred');
     const centerPanel = document.getElementById('center-panel');
-    console.log('got center panel')
     centerPanel.classList.remove('inactive', 'blurred');
-    console.log('blur removed')
-    console.log('removing container');
     removeElement('main', 'edit-project-container');
 }
 

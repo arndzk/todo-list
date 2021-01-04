@@ -10,6 +10,7 @@ const setupLocalStorage = () => {
 }
 
 const updateLocalStorage = () => {
+    console.log('updating local storage')
     localStorage.clear();
     const data = [];
     projectsArray.forEach(project => {

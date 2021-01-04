@@ -3,6 +3,7 @@
 @import 'center-panel.css';
 @import 'side-panel.css';
 @import 'form.css';
+@import 'prompt.css';
 @import '_dark-theme.css';
 
 body {

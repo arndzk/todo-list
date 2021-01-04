@@ -3,14 +3,14 @@ import { switchProjectFocus } from "../modules/focus";
 import { projectsArray } from '../index';
 import { updateLocalStorage } from "../modules/local-storage";
 import renderProjects from "../modules/render";
+import clearCenterPanel from '../modules/clear-center-panel';
+import createDeletePrompt from "../modules/prompt-delete-project";
 
 const addListenerDeleteProjectBtn = (projectDeleteBtn, indexOfElement) => {
     const deleteBtn = selectElement(projectDeleteBtn);
     deleteBtn.addEventListener('click', () => {
-        projectsArray.splice(indexOfElement, 1);
-        updateLocalStorage();
-        renderProjects(projectsArray, `project-list-item-1`);;
-    });
+        createDeletePrompt(indexOfElement);
+    }, false);
 }
 
 export default addListenerDeleteProjectBtn;

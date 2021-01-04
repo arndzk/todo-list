@@ -47,7 +47,6 @@ const addListenerSaveProjectBtn = () => {
 const closeForm = _ => {
     const projectList = selectElement('projects-list');
     const listItems = projectList.getElementsByTagName('li');
-    console.log(`is this here?: ${`project-list-item-${listItems.length+1}`}`);
     renderProjects(projectsArray, `project-list-item-${listItems.length+1}`);
     const sidePanel = document.getElementById('side-panel');
     sidePanel.classList.remove('inactive', 'blurred');

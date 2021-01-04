@@ -2,8 +2,6 @@ import selectElement from '../utils/element-selector';
 import { projectsArray } from '../index';
 
 const switchProjectFocus = (projectToFocus) => {
-    console.trace();
-    console.log(`inside switchProjectFocus, received ${projectToFocus}`);
     const projectList = selectElement('projects-list');
     const listItems = projectList.getElementsByTagName('li');
     // Make sure all list items are unfocused
@@ -17,8 +15,6 @@ const switchProjectFocus = (projectToFocus) => {
         listItemEditButton.classList.add('hidden');
     }
     const project = selectElement(projectToFocus);
-    console.log(`focusing on ${projectToFocus}`);
-    console.log(project);
     project.classList.add('project-list-item-focused');
     let listIndex;
     for (let i = 0; i < listItems.length; i++) {
