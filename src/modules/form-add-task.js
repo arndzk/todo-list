@@ -1,6 +1,7 @@
 import createElement from '../utils/element-creator';
 import appendElement from '../utils/element-appender';
 import addListenerCancelTaskBtn from '../listeners/cancel-task-btn';
+import addListenerSaveTaskBtn from '../listeners/add-task-btn';
 
 const createTaskFormContainer = _ => {
     const taskFormContainer = createElement('div', 'add-task-container', 'form-container');
@@ -43,7 +44,9 @@ const createAddTaskForm = (listIndex) => {
     createTaskFormBody();
     createTaskFormInputs();
     createTaskFormControls();
-    //addListenerSaveTaskBtn();
+    console.log(`adding event listener for ${listIndex}`)
+    addListenerSaveTaskBtn(listIndex);
+    console.log('save event listener added')
     addListenerCancelTaskBtn();
 }
 

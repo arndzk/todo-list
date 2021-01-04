@@ -36,9 +36,15 @@ const pushProjectToArray = (project) => {
     updateLocalStorage(projectsArray);
 }
 
+const pushTaskToProject = (task, listIndex) => {
+    console.log(`pushing ${newTask} to ${listIndex}`);
+    projectsArray[listIndex].addProjectTask(task);
+}
+
 export {
     setupLocalStorage,
     updateLocalStorage,
     updateProjectsArray,
-    pushProjectToArray
+    pushProjectToArray,
+    pushTaskToProject
 }

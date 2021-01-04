@@ -40,23 +40,26 @@ const renderProjects = (projectsArray, projectToFocus) => {
         const listItems = projectsList.getElementsByTagName('li');
         if (listItems.length > 0) {
             switchProjectFocus(projectToFocus);
-            //renderTasks(projectsArray);
+
+            renderTasks(projectsArray, projectToFocus);
         }
     }
 
     projectsList.classList.remove('no-click');
 }
 
-const renderTasks = (projectsArray) => {
+const renderTasks = (projectsArray, projectToFocus) => {
+    console.log(projectToFocus);
     const taskList = selectElement('task-list');
-    // while (taskList.lastElementChild) {
-    //     taskList.removeChild(taskList.lastElementChild);
-    // }
-    //const taskListControls = selectElement('task-list-controls');
-    //taskListControls.removeChild('add-task-btn');
-    //const addTaskBtn = createElement('button', 'add-task-btn', null, 'Add Task');
-    //appendElement('task-list-controls', addTaskBtn);
-    //addListenerAddTaskBtn();
+    const listIndex = projectToFocus.substr(projectToFocus.length - 1);
+    const arrayIndex = parseInt(listIndex) - 1;
+    console.log(`array-index: ${arrayIndex}`);
+    while (taskList.lastElementChild) {
+        taskList.removeChild(taskList.lastElementChild);
+    }
+    let projectTasks;
+    projectTasks = projectsArray[arrayIndex].getTasks;
+    console.log(projectTasks);
     // let i = 0;
     // projectsArray.forEach(project => {
     //     const taskDiv = createElement('li', `task-list-item-${i}`, `task-list-item`);

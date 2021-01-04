@@ -5,7 +5,6 @@ import { pushProjectToArray, updateLocalStorage } from '../modules/local-storage
 import renderProjects from '../modules/render';
 import { projectsArray } from '../index';
 import removeElement from '../utils/element-remover';
-import { switchProjectFocus } from '../modules/focus';
 
 const regEx = {
     name: /^[.,:!?'-À-ÿ\w\s]{1,20}$/,
