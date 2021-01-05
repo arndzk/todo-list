@@ -57,13 +57,17 @@ const renderTasks = (projectsArray, projectToFocus) => {
     while (taskList.lastElementChild) {
         taskList.removeChild(taskList.lastElementChild);
     }
-    let projectTasks;
-    projectTasks = projectsArray[arrayIndex].getTasks;
+    let projectTasks = [];
+    projectTasks = projectsArray[arrayIndex].getProjectTasks();
+    console.log('let us see the state of projectsArray');
+    console.log(projectsArray);
+    console.log('let us see the state of projectTasks');
     console.log(projectTasks);
     // let i = 0;
-    // projectsArray.forEach(project => {
+    // projectTasks.forEach(task => {
     //     const taskDiv = createElement('li', `task-list-item-${i}`, `task-list-item`);
-    //     const taskItemName = createElement('span', `task-name-${i+1}, 'task-name`, project.getProjectTasks)
+    //     const taskItemName = createElement('span', `task-name-${i+1}, 'task-name`, projectTasks[i].getTaskName());
+
     //     i++
     // })
 }

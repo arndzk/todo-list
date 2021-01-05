@@ -25,7 +25,8 @@ const addListenerSaveProjectBtn = () => {
             validateTextInput(regEx.description, desc) === true
         ) {
             errMsg.classList.add('hidden');
-            const newProject = createProject(name.value, desc.value);
+            let taskList = [];
+            const newProject = createProject(name.value, desc.value, taskList);
             pushProjectToArray(newProject);
             updateLocalStorage();
             closeForm();

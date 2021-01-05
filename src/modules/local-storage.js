@@ -1,10 +1,11 @@
 import createProject from './project';
+import createTask from './task';
 import { projectsArray } from '../index';
 
 const setupLocalStorage = () => {
     const data = JSON.parse(localStorage.getItem('projects') || '[]');
     if (data.length === 0) {
-        data.push(createProject('Test Project Name', 'Test Project Desc'));
+        data.push(createProject('Test Project Name', 'Test Project Desc', []));
     }
     return data;
 }
@@ -14,12 +15,20 @@ const updateLocalStorage = () => {
     localStorage.clear();
     const data = [];
     projectsArray.forEach(project => {
+        let taskList = project.getProjectTasks();
+        console.log('tasklist to update')
+        console.log(taskList);
+        let taskListString = JSON.stringify(taskList);
+        console.log(taskListString)
         data.push({
             name: project.getProjectName(),
-            desc: project.getProjectDesc()
+            desc: project.getProjectDesc(),
+            tasks: taskListString
         })
     })
     localStorage.setItem('projects', JSON.stringify(data));
+    console.log('before updating projectsArray')
+    console.log(localStorage)
     updateProjectsArray();
 }
 
@@ -27,7 +36,11 @@ const updateProjectsArray = () => {
     projectsArray = [];
     const data = JSON.parse(localStorage.getItem('projects'));
     data.forEach(project => {
-        projectsArray.push(createProject(project.name, project.desc));
+        
+        projectsArray.push(createProject(project.name, project.desc, project.tasks));
+    })
+    projectsArray.forEach(project => {
+        console.log(project.getProjectTasks());
     })
 }
 
@@ -37,8 +50,11 @@ const pushProjectToArray = (project) => {
 }
 
 const pushTaskToProject = (task, listIndex) => {
-    console.log(`pushing ${newTask} to ${listIndex}`);
+    console.log(task);
+    console.log(`pushing ${task} to ${listIndex}`);
     projectsArray[listIndex].addProjectTask(task);
+    console.log('task pushed')
+    updateLocalStorage(projectsArray);
 }
 
 export {

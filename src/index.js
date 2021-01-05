@@ -17,7 +17,7 @@ const setupLocalStorage = (projectsArray) => {
         localStorage.setItem('projects', JSON.stringify(data));
     } else {
         data.forEach(project => {
-            projectsArray.push(createProject(project.name, project.desc));
+            projectsArray.push(createProject(project.name, project.desc, project.tasks));
         })
     }
 }
