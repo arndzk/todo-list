@@ -40,8 +40,12 @@ const updateProjectsArray = () => {
         project.tasks.forEach(task => {
             taskList.push(createTask(task.name));
         })
+        console.log(`the resulting taskList from localStorage for ${project.name}`)
+        console.log(taskList);
         projectsArray.push(createProject(project.name, project.desc, taskList));
     })
+    console.log('projectsArray updated!')
+    console.log(projectsArray);
 }
 
 const pushProjectToArray = (project) => {

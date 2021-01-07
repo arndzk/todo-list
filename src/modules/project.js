@@ -1,5 +1,6 @@
 const createProject = (name, desc, tasks) => {
     let projectTasks = tasks;
+    console.log(projectTasks);
     let projectName = name;
     let projectDesc = desc;
     let projectFocus = false;

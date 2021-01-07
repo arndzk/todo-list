@@ -1,7 +1,7 @@
 import selectElement from '../utils/element-selector';
 import { validateTextInput } from '../utils/validator';
 import { updateLocalStorage } from '../modules/local-storage';
-import renderProjects from '../modules/render';
+import { renderProjects } from '../modules/render';
 import { projectsArray } from '../index';
 import removeElement from '../utils/element-remover';
 

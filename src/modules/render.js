@@ -3,7 +3,6 @@ import appendElement from '../utils/element-appender';
 import selectElement from '../utils/element-selector';
 import addListenerProjectListItem from '../listeners/project-list-item';
 import { switchProjectFocus } from './focus';
-import addListenerAddTaskBtn from '../listeners/add-task-btn';
 import addListenerProjectDeleteBtn from '../listeners/delete-project-btn';
 import addListenerProjectEditBtn from '../listeners/edit-project-btn';
 
@@ -39,9 +38,10 @@ const renderProjects = (projectsArray, projectToFocus) => {
     if (projectToFocus != null) {
         const listItems = projectsList.getElementsByTagName('li');
         if (listItems.length > 0) {
+            console.log('calling switchProjectFocus from renderProjects')
             switchProjectFocus(projectToFocus);
-
-            renderTasks(projectsArray, projectToFocus);
+            // console.log('calling renderTasks from renderProjects')
+            // renderTasks(projectsArray, projectToFocus);
         }
     }
 
@@ -49,6 +49,7 @@ const renderProjects = (projectsArray, projectToFocus) => {
 }
 
 const renderTasks = (projectsArray, projectToFocus) => {
+    console.log('rendering tasks...')
     console.log(projectToFocus);
     const taskList = selectElement('task-list');
     const listIndex = projectToFocus.substr(projectToFocus.length - 1);
@@ -57,19 +58,30 @@ const renderTasks = (projectsArray, projectToFocus) => {
     while (taskList.lastElementChild) {
         taskList.removeChild(taskList.lastElementChild);
     }
+    console.log('task-list reset')
     let projectTasks = [];
     projectTasks = projectsArray[arrayIndex].getProjectTasks();
     console.log('let us see the state of projectsArray');
     console.log(projectsArray);
     console.log('let us see the state of projectTasks');
     console.log(projectTasks);
-    // let i = 0;
-    // projectTasks.forEach(task => {
-    //     const taskDiv = createElement('li', `task-list-item-${i}`, `task-list-item`);
-    //     const taskItemName = createElement('span', `task-name-${i+1}, 'task-name`, projectTasks[i].getTaskName());
-
-    //     i++
-    // })
+    let i = 0;
+    projectTasks.forEach(task => {
+        console.log('creating div...')
+        const taskDiv = createElement('li', `task-list-item-${i}`, `task-list-item`);
+        console.log('div created...')
+        console.log('creating span...')
+        console.log(task.getTaskName());
+        const taskItemName = createElement('span', `task-name-${i}`, 'task-name', task.getTaskName());
+        console.log('span created...')
+        appendElement('task-list', taskDiv);
+        appendElement(`task-list-item-${i}`, taskItemName);
+        console.log('elements appended')
+        i++;
+    })
 }
 
-export default renderProjects;
+export {
+    renderProjects,
+    renderTasks
+}

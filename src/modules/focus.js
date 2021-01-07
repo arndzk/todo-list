@@ -1,5 +1,6 @@
 import selectElement from '../utils/element-selector';
 import { projectsArray } from '../index';
+import { renderTasks } from './render';
 import addEventListenerAddTaskBtn from '../listeners/add-task-btn';
 
 const switchProjectFocus = (projectToFocus) => {
@@ -40,6 +41,9 @@ const switchProjectFocus = (projectToFocus) => {
     const projectEditButton = selectElement(`edit-project-btn-${listIndex + 1}`);
     projectDeleteButton.classList.remove('hidden');
     projectEditButton.classList.remove('hidden');
+
+    console.log('calling renderTasks from switchProjectFocus');
+    renderTasks(projectsArray, projectToFocus);
 }
 
 export {

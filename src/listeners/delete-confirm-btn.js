@@ -1,7 +1,7 @@
 import { projectsArray } from '../index';
 import { updateLocalStorage } from '../modules/local-storage';
 import clearCenterPanel from '../modules/clear-center-panel';
-import renderProjects from '../modules/render';
+import { renderProjects } from '../modules/render';
 import selectElement from '../utils/element-selector';
 import removeElement from '../utils/element-remover';
 

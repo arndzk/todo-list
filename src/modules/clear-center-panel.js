@@ -8,7 +8,7 @@ const clearCenterPanel = _ => {
     projectTitle.textContent = '';
     projectDesc.textContent = '';
     while (taskList.lastElementChild) {
-        taskList.removeChild(projectsList.lastElementChild);
+        taskList.removeChild(taskList.lastElementChild);
     }
 }
 

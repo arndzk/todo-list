@@ -2,7 +2,8 @@ import loadPageFrame from './modules/page-frame';
 import loadSidePanel from './modules/side-panel';
 import loadCenterPanel from './modules/center-panel';
 import createProject from './modules/project';
-import renderProjects from './modules/render';
+import createTask from './modules/task';
+import { renderProjects } from './modules/render';
 import './styles/styles.css';
 
 const init = _ => {
@@ -17,7 +18,11 @@ const setupLocalStorage = (projectsArray) => {
         localStorage.setItem('projects', JSON.stringify(data));
     } else {
         data.forEach(project => {
-            projectsArray.push(createProject(project.name, project.desc, project.tasks));
+            const taskList = [];
+            project.tasks.forEach(task => {
+                taskList.push(createTask(task.name));
+            })
+            projectsArray.push(createProject(project.name, project.desc, taskList));
         })
     }
 }
