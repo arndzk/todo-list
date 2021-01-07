@@ -9,6 +9,7 @@ const addListenerDeleteConfirmBtn = (indexOfElement) => {
     const confirmBtn = selectElement('delete-confirm-btn');
     confirmBtn.addEventListener('click', () => {
         projectsArray.splice(indexOfElement, 1);
+        console.log('calling updateLocalStorage from deleteConfirmBtn')
         updateLocalStorage();
         clearCenterPanel();
         closePrompt();

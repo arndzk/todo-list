@@ -1,7 +1,7 @@
 import selectElement from '../utils/element-selector';
 import { validateTextInput } from '../utils/validator';
 import createProject from '../modules/project';
-import { pushProjectToArray, updateLocalStorage } from '../modules/local-storage';
+import { pushProjectToArray } from '../modules/local-storage';
 import renderProjects from '../modules/render';
 import { projectsArray } from '../index';
 import removeElement from '../utils/element-remover';
@@ -27,8 +27,8 @@ const addListenerSaveProjectBtn = () => {
             errMsg.classList.add('hidden');
             let taskList = [];
             const newProject = createProject(name.value, desc.value, taskList);
+            console.log(JSON.stringify(newProject));
             pushProjectToArray(newProject);
-            updateLocalStorage();
             closeForm();
         } else {
             if (errMsg.classList.contains('hidden')) {

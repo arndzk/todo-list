@@ -1,6 +1,3 @@
-import { projectsArray } from '../index';
-import { updateLocalStorage } from "../modules/local-storage";
-import renderProjects from "../modules/render";
 import selectElement from '../utils/element-selector';
 import createEditProjectForm from "../modules/form-edit-project";
 
