@@ -36,7 +36,11 @@ const updateProjectsArray = () => {
     projectsArray = [];
     const data = JSON.parse(localStorage.getItem('projects'));
     data.forEach(project => {
-        projectsArray.push(createProject(project.name, project.desc, project.tasks));
+        const taskList = [];
+        project.tasks.forEach(task => {
+            taskList.push(createTask(task.name));
+        })
+        projectsArray.push(createProject(project.name, project.desc, taskList));
     })
 }
 
