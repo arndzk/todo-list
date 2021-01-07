@@ -20,10 +20,11 @@ const updateLocalStorage = () => {
         console.log(taskList);
         let taskListString = JSON.stringify(taskList);
         console.log(taskListString)
+        console.log(JSON.stringify(project));
         data.push({
             name: project.getProjectName(),
             desc: project.getProjectDesc(),
-            tasks: taskListString
+            tasks: project.getProjectTasks()
         })
     })
     localStorage.setItem('projects', JSON.stringify(data));
