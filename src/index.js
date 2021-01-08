@@ -20,7 +20,7 @@ const setupLocalStorage = (projectsArray) => {
         data.forEach(project => {
             const taskList = [];
             project.tasks.forEach(task => {
-                taskList.push(createTask(task.name));
+                taskList.push(createTask(task.name, task.desc, task.dueDate, task.priority, task.isDone));
             })
             projectsArray.push(createProject(project.name, project.desc, taskList));
         })

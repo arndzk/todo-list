@@ -14,15 +14,21 @@ const addListenerSaveTaskBtn = (listIndex) => {
     const saveTaskBtn = selectElement('save-task-btn');
     saveTaskBtn.onclick = function () {
         const name = selectElement('add-task-name-input');
+        const desc = selectElement('add-task-desc-input');
+        const dueDate = selectElement('add-task-date-input');
+        const priorities =  selectElement('add-task-priority-input');
+        const priority = getPriority(priorities);
         const errMsg = selectElement('add-task-err-msg');
         if (
-            validateTextInput(regEx.name, name) === true
+            validateTextInput(regEx.name, name) === true &&
+            validateTextInput(regEx.desc, desc) === true && 
+            validatePriority(priority) === true &&
+            validateDueDate(dueDate) === true
         ) {
             errMsg.classList.add('hidden');
-            const newTask = createTask(name.value);
+            const newTask = createTask(name.value, desc.value, priority, date.value);
             console.log('will now see the object name');
             console.log(newTask.getTaskName())
-            console.log('will now push');
             pushTaskToProject(newTask, listIndex);
             closeForm();
         } else {

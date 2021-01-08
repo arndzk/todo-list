@@ -38,7 +38,7 @@ const updateProjectsArray = () => {
     data.forEach(project => {
         const taskList = [];
         project.tasks.forEach(task => {
-            taskList.push(createTask(task.name));
+            taskList.push(createTask(task.name, task.desc, task.dueDate, task.priority, task.isDone));
         })
         console.log(`the resulting taskList from localStorage for ${project.name}`)
         console.log(taskList);
