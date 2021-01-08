@@ -257,13 +257,18 @@
     align-items: center;
 }
 
-.priority-container input{
+.radio__input {
+    display: flex;
+}
+
+.radio__input input{
+    position: absolute;
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-.priority-radio {
+.radio__control {
     display: block;
     width: 1em;
     height: 1em;
@@ -271,19 +276,32 @@
     border: 0.1em solid var(--line);
 }
 
-#priority-low {
-    color: yellow;
+#low-radio-control {
+    border-color:#fdfd96;
 }
 
-#priority-normal {
-    color: orange;
+#normal-radio-control {
+    border-color: #ffb347;
 }
 
-#priority-high {
-    color: red;
+#high-radio-control {
+    border-color: #ff6961;
+}
+
+.radio__input input:checked + #low-radio-control{
+    background: radial-gradient(#fdfd96 50%, rgba(255, 0, 0, 0) 51%);
+}
+
+.radio__input input:checked + #normal-radio-control{
+    background: radial-gradient(#ffb347 50%, rgba(255, 0, 0, 0) 51%);
+}
+
+.radio__input input:checked + #high-radio-control{
+    background: radial-gradient(#ff6961 50%, rgba(255, 0, 0, 0) 51%);
 }
 
 .priority-label {
+    line-height: 1;
     height: 16px;
     font-size: 16px;
 }
