@@ -25,7 +25,7 @@ const createTaskFormInputs = _ => {
     const taskFormInputs = createElement('div', 'add-task-inputs', 'form-inputs');
     appendElement('add-task-form', taskFormInputs);
     // Task Name
-    const taskFormNameField = createElement('div', 'add-task-name-field', 'project-name-input-field');
+    const taskFormNameField = createElement('div', 'add-task-name-field', 'task-name-input-field');
     appendElement('add-task-inputs', taskFormNameField);
     const taskFormNameLabel = createElement('label', 'add-task-name-label', null, 'Task Name');
     appendElement('add-task-name-field', taskFormNameLabel);
@@ -33,7 +33,7 @@ const createTaskFormInputs = _ => {
     const taskFormNameInput = createElement('textarea', 'add-task-name-input', 'form-input');
     appendElement('add-task-name-field', taskFormNameInput);
     // Task Description
-    const taskFormDescField = createElement('div', 'add-task-desc-field', 'project-desc-input-field');
+    const taskFormDescField = createElement('div', 'add-task-desc-field', 'task-desc-input-field');
     appendElement('add-task-inputs', taskFormDescField);
     const taskFormDescLabel = createElement('label', 'add-task-desc-label', null, 'Task Description');
     appendElement('add-task-desc-field', taskFormDescLabel);
@@ -41,7 +41,7 @@ const createTaskFormInputs = _ => {
     const taskFormDescInput = createElement('textarea', 'add-task-desc-input', 'form-input');
     appendElement('add-task-desc-field', taskFormDescInput);
     // Task Due Date
-    const taskFormDateField = createElement('div', 'add-task-date-field');
+    const taskFormDateField = createElement('div', 'add-task-date-field', 'task-date-input-field');
     appendElement('add-task-inputs', taskFormDateField);
     const taskFormDateLabel = createElement('label', 'add-task-date-label', null, 'Due Date');
     appendElement('add-task-date-field', taskFormDateLabel);
@@ -50,30 +50,39 @@ const createTaskFormInputs = _ => {
     taskFormDateInput.setAttribute('type', 'date');
     appendElement('add-task-date-field', taskFormDateInput);
     // Task Priority
-    const taskFormPriorityField = createElement('div', 'add-task-priority-field');
+    const taskFormPriorityField = createElement('div', 'add-task-priority-field', 'task-priority-input-field');
     appendElement('add-task-inputs', taskFormPriorityField);
     const taskFormPriorityLabel = createElement('label', 'add-task-priority-label', null, 'Priority');
     appendElement('add-task-priority-field', taskFormPriorityLabel);
     taskFormPriorityLabel.htmlFor = 'add-task-priority-input';
     const taskFormPriorityInput = createElement('div', 'add-task-priority-input');
     appendElement('add-task-priority-field', taskFormPriorityInput);
-    console.log('creating high priority...')
 
     const priorityHigh = createElement('div', 'priority-high-container', 'priority-container');
     const priorityNormal = createElement('div', 'priority-normal-container', 'priority-container');
     const priorityLow = createElement('div', 'priority-low-container', 'priority-container');
-    appendElement('add-task-priority-input', priorityHigh);
-    appendElement('add-task-priority-input', priorityNormal);
     appendElement('add-task-priority-input', priorityLow);
+    appendElement('add-task-priority-input', priorityNormal);
+    appendElement('add-task-priority-input', priorityHigh);
+
+    const priorityHighRadioInput = createElement('span', 'high-radio-input', 'radio__input');
+    const priorityNormalRadioInput = createElement('span', 'normal-radio-input', 'radio__input');
+    const priorityLowRadioInput = createElement('span', 'low-radio-input', 'radio__input');
+    appendElement('priority-low-container', priorityLowRadioInput);
+    appendElement('priority-normal-container', priorityNormalRadioInput);
+    appendElement('priority-high-container', priorityHighRadioInput);
 
     const priorityHighRadio = createElement('input', 'priority-high', 'priority-radio');
     priorityHighRadio.setAttribute('type', 'radio');
     priorityHighRadio.setAttribute('name', 'priority');
     priorityHighRadio.setAttribute('value', 'high');
+
+    const priorityHighRadioControl = createElement('span', 'high-radio-control', 'radio__control');
+    const priorityNormalRadioControl = createElement('span', 'normal-radio-control', 'radio__control')
+    const priorityLowRadioControl = createElement('span', 'low-radio-control', 'radio__control')
+
     const priorityHighLabel = createElement('label', 'priority-high-label', 'priority-label', 'High');
     priorityHighLabel.htmlFor = 'priority-high';
-    appendElement('priority-high-container', priorityHighRadio);
-    appendElement('priority-high-container', priorityHighLabel);
 
     const priorityNormalRadio = createElement('input', 'priority-normal', 'priority-radio');
     priorityNormalRadio.setAttribute('type', 'radio');
@@ -81,8 +90,6 @@ const createTaskFormInputs = _ => {
     priorityNormalRadio.setAttribute('value', 'normal');
     const priorityNormalLabel = createElement('label', 'priority-normal-label', 'priority-label', 'Normal');
     priorityNormalLabel.htmlFor = 'priority-normal';
-    appendElement('priority-normal-container', priorityNormalRadio);
-    appendElement('priority-normal-container', priorityNormalLabel);
 
     const priorityLowRadio = createElement('input', 'priority-low', 'priority-radio');
     priorityLowRadio.setAttribute('type', 'radio');
@@ -90,8 +97,17 @@ const createTaskFormInputs = _ => {
     priorityLowRadio.setAttribute('value', 'low');
     const priorityLowLabel = createElement('label', 'priority-low-label', 'priority-label', 'Low');
     priorityLowLabel.htmlFor = 'priority-low';
-    appendElement('priority-low-container', priorityLowRadio);
+
+
+    appendElement('low-radio-input', priorityLowRadio);
+    appendElement('low-radio-input', priorityLowRadioControl);
     appendElement('priority-low-container', priorityLowLabel);
+    appendElement('normal-radio-input', priorityNormalRadio);
+    appendElement('normal-radio-input', priorityNormalRadioControl);
+    appendElement('priority-normal-container', priorityNormalLabel);
+    appendElement('high-radio-input', priorityHighRadio);
+    appendElement('high-radio-input', priorityHighRadioControl);
+    appendElement('priority-high-container', priorityHighLabel);
 
     // Form Error Message
     const taskFormErrMsg = createElement('div', 'add-task-err-msg', 'err-msg', 'Please fill out the empty field(s).');

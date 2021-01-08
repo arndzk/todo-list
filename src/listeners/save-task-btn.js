@@ -12,10 +12,7 @@ const regEx = {
 const addListenerSaveTaskBtn = (listIndex) => {
     console.log(listIndex);
     const saveTaskBtn = selectElement('save-task-btn');
-    console.log('attempting to add the listener')
     saveTaskBtn.onclick = function () {
-        console.log('attempting to save task')
-        const form = selectElement('add-task-form');
         const name = selectElement('add-task-name-input');
         const errMsg = selectElement('add-task-err-msg');
         if (

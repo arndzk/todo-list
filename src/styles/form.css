@@ -178,3 +178,112 @@
 .form-controls #cancel-project-edit-btn:active {
     color: var(--error);
 }
+
+.task-name-input-field {
+    margin: 10px 30px 10px 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-name-input-field label{
+    padding-left: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    color: var(--primary-text);
+    font-size: 16px;
+}
+
+.task-desc-input-field {
+    margin: 10px 30px 10px 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-desc-input-field label {
+    padding-left: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    color: var(--primary-text);
+    font-size: 16px;
+}
+
+.task-date-input-field {
+    margin: 10px 30px 10px 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-date-input-field label {
+    padding-left: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    color: var(--primary-text);
+    font-size: 16px;
+}
+
+.task-priority-input-field {
+    margin: 10px 30px 10px 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-priority-input-field label { 
+    padding-left: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    color: var(--primary-text);
+    font-size: 16px;
+}
+
+#add-task-priority-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.priority-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.priority-container input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.priority-radio {
+    display: block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    border: 0.1em solid var(--line);
+}
+
+#priority-low {
+    color: yellow;
+}
+
+#priority-normal {
+    color: orange;
+}
+
+#priority-high {
+    color: red;
+}
+
+.priority-label {
+    height: 16px;
+    font-size: 16px;
+}
