@@ -1,5 +1,6 @@
 import selectElement from '../utils/element-selector';
-import { validateTextInput } from '../utils/validator';
+import { validateTextInput, validatePriority, validateDueDate } from '../utils/validator';
+import getPriority from '../utils/priority-getter';
 import createTask from '../modules/task';
 import { pushTaskToProject } from '../modules/local-storage';
 import removeElement from '../utils/element-remover';
@@ -17,18 +18,24 @@ const addListenerSaveTaskBtn = (listIndex) => {
         const desc = selectElement('add-task-desc-input');
         const dueDate = selectElement('add-task-date-input');
         const priorities =  selectElement('add-task-priority-input');
+        console.log('calling getPriority()');
         const priority = getPriority(priorities);
         const errMsg = selectElement('add-task-err-msg');
         if (
             validateTextInput(regEx.name, name) === true &&
-            validateTextInput(regEx.desc, desc) === true && 
-            validatePriority(priority) === true &&
-            validateDueDate(dueDate) === true
+            validateTextInput(regEx.description, desc) === true && 
+            validateDueDate(dueDate) === true &&
+            validatePriority(priority) === true
         ) {
+            console.log('everything validates')
             errMsg.classList.add('hidden');
-            const newTask = createTask(name.value, desc.value, priority, date.value);
-            console.log('will now see the object name');
+            const newTask = createTask(name.value, desc.value, dueDate.value, priority);
+            console.log('will now see the object fields');
             console.log(newTask.getTaskName())
+            console.log(newTask.getTaskDesc())
+            console.log(newTask.getTaskPriority())
+            console.log(newTask.getTaskDueDate())
+            console.log(newTask.getIsDone())
             pushTaskToProject(newTask, listIndex);
             closeForm();
         } else {

@@ -67,16 +67,26 @@ const renderTasks = (projectsArray, projectToFocus) => {
     console.log(projectTasks);
     let i = 0;
     projectTasks.forEach(task => {
-        console.log('creating div...')
         const taskDiv = createElement('li', `task-list-item-${i}`, `task-list-item`);
-        console.log('div created...')
-        console.log('creating span...')
-        console.log(task.getTaskName());
-        const taskItemName = createElement('span', `task-name-${i}`, 'task-name', task.getTaskName());
-        console.log('span created...')
+        console.log('creating taskCheck')
+        const taskCheck = createElement('div', `task-check-${i}`, 'task-check');
+        if (task.getTaskPriority() === 'low') {
+            console.log(task.getTaskPriority());
+            taskCheck.classList.add('low-check');
+        } else if (task.getTaskPriority() === 'normal') {
+            console.log(task.getTaskPriority());
+            taskCheck.classList.add('normal-check');
+        } else if (task.getTaskPriority() === 'high') {
+            console.log(task.getTaskPriority());
+            taskCheck.classList.add('high-check');
+        }
+        console.log('created taskCheck')
         appendElement('task-list', taskDiv);
+        appendElement(`task-list-item-${i}`, taskCheck);
+        const taskItemName = createElement('span', `task-name-${i}`, 'task-name', task.getTaskName());
         appendElement(`task-list-item-${i}`, taskItemName);
-        console.log('elements appended')
+        const taskDueDate = createElement('span', `task-due-date-${i}`, 'task-due-date', task.getTaskDueDate());
+        appendElement(`task-list-item-${i}`, taskDueDate);
         i++;
     })
 }

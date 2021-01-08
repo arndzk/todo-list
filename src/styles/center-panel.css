@@ -65,6 +65,26 @@
     cursor: pointer;
 }
 
+.task-check {
+    display: block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    border: 0.1em solid var(--line);
+}
+
+.low-check {
+    border-color: #fdfd96;
+}
+
+.normal-check {
+    border-color: #ffb347;;
+}
+
+.high-check {
+    border-color: #ff6961;
+}
+
 #task-list-controls {
     margin: 0px 30px 0px 30px;
     text-align: right;

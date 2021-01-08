@@ -70,6 +70,10 @@ const getTasks = (taskList) => {
         console.log(task.getTaskName());
         tasksArray.push({
             name: task.getTaskName(),
+            desc: task.getTaskDesc(),
+            dueDate: task.getTaskDueDate(),
+            priority: task.getTaskPriority(),
+            isDone: task.getIsDone()
         })
     })
     return tasksArray;

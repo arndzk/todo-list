@@ -3,10 +3,11 @@ const createTask = (name, desc, dueDate, priority, status) => {
     let taskDesc = desc;
     let taskDueDate = dueDate;
     let taskPriority = priority;
+    let isDone;
     if (status == null ) {
-        let isDone = false;
+        isDone = false;
     } else {
-        let isDone = done;
+        isDone = status;
     }
 
     const getTaskName = _ => {
