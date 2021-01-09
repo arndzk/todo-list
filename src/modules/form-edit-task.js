@@ -1,7 +1,7 @@
 import createElement from '../utils/element-creator';
 import appendElement from '../utils/element-appender';
 import addListenerCancelTaskEditBtn from '../listeners/cancel-task-edit-btn';
-import addListenerSaveTaskEditBtn from '../listeners/save-task-btn';
+import addListenerSaveTaskEditBtn from '../listeners/save-task-edit-btn';
 import { projectsArray } from '../index';
 
 const createTaskFormContainer = _ => {
@@ -162,7 +162,7 @@ const createEditTaskForm = (projectListIndex, taskListIndex) => {
     createTaskFromHeader();
     createTaskFormInputs(projectListIndex, taskListIndex);
     createTaskFormControls();
-    //addListenerSaveTaskEditBtn(listIndex);
+    addListenerSaveTaskEditBtn(projectListIndex, taskListIndex);
     addListenerCancelTaskEditBtn();
 }
 

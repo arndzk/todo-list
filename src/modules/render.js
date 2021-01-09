@@ -55,6 +55,7 @@ const renderTasks = (projectsArray, projectToFocus) => {
     const taskList = selectElement('task-list');
     const listIndex = projectToFocus.substr(projectToFocus.length - 1);
     const arrayIndex = parseInt(listIndex) - 1;
+    console.log(`arrayIndex: ${arrayIndex}`);
     console.log(`array-index: ${arrayIndex}`);
     while (taskList.lastElementChild) {
         taskList.removeChild(taskList.lastElementChild);
@@ -102,13 +103,70 @@ const renderTasks = (projectsArray, projectToFocus) => {
         appendElement(`edit-task-btn-${i}`, editTaskBtnIcon);
         appendElement(`delete-task-btn-${i}`, deleteTaskBtnIcon);
         addListenerTaskEditBtn(`edit-task-btn-${i}`, arrayIndex, i);
+        i++;
+    })
+}
 
+const renderTasksfromEdit = (projectsArray, projectToFocus, taskToFocus) => {
+    console.log('rendering tasks...')
+    console.log(projectToFocus);
+    const taskList = selectElement('task-list');
+    const listIndex = projectToFocus.substr(projectToFocus.length - 1);
+    const arrayIndex = parseInt(listIndex);
+    console.log(`list-index: ${listIndex}`);
+    console.log(`array-index: ${arrayIndex}`);
+    while (taskList.lastElementChild) {
+        taskList.removeChild(taskList.lastElementChild);
+    }
+    console.log('task-list reset')
+    let projectTasks = [];
+    projectTasks = projectsArray[arrayIndex].getProjectTasks();
+    console.log('let us see the state of projectsArray');
+    console.log(projectsArray);
+    console.log('let us see the state of projectTasks');
+    console.log(projectTasks);
+    let i = 0;
+    projectTasks.forEach(task => {
+        const taskDiv = createElement('li', `task-list-item-${i}`, `task-list-item`);
+        console.log('creating taskCheck')
+        const taskCheck = createElement('div', `task-check-${i}`, 'task-check');
+        if (task.getTaskPriority() === 'low') {
+            console.log(task.getTaskPriority());
+            taskCheck.classList.add('low-check');
+        } else if (task.getTaskPriority() === 'normal') {
+            console.log(task.getTaskPriority());
+            taskCheck.classList.add('normal-check');
+        } else if (task.getTaskPriority() === 'high') {
+            console.log(task.getTaskPriority());
+            taskCheck.classList.add('high-check');
+        }
+        console.log('created taskCheck')
+        appendElement('task-list', taskDiv);
+        appendElement(`task-list-item-${i}`, taskCheck);
 
+        const taskItemName = createElement('span', `task-name-${i}`, 'task-name', task.getTaskName());
+        appendElement(`task-list-item-${i}`, taskItemName);
+        const taskDueDate = createElement('span', `task-due-date-${i}`, 'task-due-date', task.getTaskDueDate());
+        appendElement(`task-list-item-${i}`, taskDueDate);
+
+        // Edit & Delete Buttons
+        const editTaskBtn = createElement('div', `edit-task-btn-${i}`, 'edit-task-btn');
+        const editTaskBtnIcon = createElement('span', `edit-task-icon-${i}`, 'edit-task-icon', 'edit');
+        editTaskBtnIcon.classList.add('material-icons');
+        const deleteTaskBtn = createElement('div', `delete-task-btn-${i}`, 'delete-task-btn');
+        const deleteTaskBtnIcon = createElement('span', `delete-task-icon-${i}`, 'delete-task-icon', 'delete');
+        deleteTaskBtnIcon.classList.add('material-icons');
+        appendElement(`task-list-item-${i}`, editTaskBtn);
+        appendElement(`task-list-item-${i}`, deleteTaskBtn);
+        appendElement(`edit-task-btn-${i}`, editTaskBtnIcon);
+        appendElement(`delete-task-btn-${i}`, deleteTaskBtnIcon);
+        addListenerTaskEditBtn(`edit-task-btn-${i}`, arrayIndex, i);
         i++;
     })
 }
 
 export {
     renderProjects,
-    renderTasks
+    renderTasks,
+    renderTasksfromEdit
 }
