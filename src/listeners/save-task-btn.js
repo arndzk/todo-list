@@ -15,7 +15,8 @@ const regEx = {
 const addListenerSaveTaskBtn = (listIndex) => {
     console.log(`listIndex: ${listIndex}`);
     const saveTaskBtn = selectElement('save-task-btn');
-    saveTaskBtn.onclick = function () {
+    saveTaskBtn.onclick = function (e) {
+        e.preventDefault();
         const name = selectElement('add-task-name-input');
         const desc = selectElement('add-task-desc-input');
         const dueDate = selectElement('add-task-date-input');
@@ -32,12 +33,6 @@ const addListenerSaveTaskBtn = (listIndex) => {
             console.log('everything validates')
             errMsg.classList.add('hidden');
             const newTask = createTask(name.value, desc.value, dueDate.value, priority);
-            console.log('will now see the object fields');
-            console.log(newTask.getTaskName())
-            console.log(newTask.getTaskDesc())
-            console.log(newTask.getTaskPriority())
-            console.log(newTask.getTaskDueDate())
-            console.log(newTask.getIsDone())
             pushTaskToProject(newTask, listIndex);
             closeForm(listIndex);
         } else {
@@ -50,16 +45,20 @@ const addListenerSaveTaskBtn = (listIndex) => {
             if (desc.value === null || desc.value === '') {
                 desc.classList.add('empty-input');
             }
+            if (dueDate.value === null || dueDate.value === '' || validateDueDate(dueDate) === false) {
+                dueDate.classList.add('empty-input');
+            }
+            if (priority === 'empty' || validatePriority(priority) === false) {
+                priorities.classList.add('empty-input');
+            }
         }
 
     }
 }
 
-const closeForm = (listIndex) => {
-    const taskList = selectElement('task-list');
-    const listItems = taskList.getElementsByTagName('li');
+const closeForm = (listIndex) => {;
     console.log('task saved, re-rendering projects...')
-    renderTasks(projectsArray, `task-list-item-${listIndex}`);
+    renderTasks(projectsArray, `task-list-item-${listIndex + 1}`);
     const sidePanel = document.getElementById('side-panel');
     sidePanel.classList.remove('inactive', 'blurred');
     const centerPanel = document.getElementById('center-panel');
