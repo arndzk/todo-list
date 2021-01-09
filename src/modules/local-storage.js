@@ -11,14 +11,10 @@ const setupLocalStorage = () => {
 }
 
 const updateLocalStorage = () => {
-    debugger;
-    console.log('updating local storage')
     localStorage.clear();
     const data = [];
     projectsArray.forEach(project => {
         const taskList = project.getProjectTasks();
-        console.log(`tasklist in ${project.getProjectName()}:`)
-        console.log(taskList);
         data.push({
             name: project.getProjectName(),
             desc: project.getProjectDesc(),
@@ -26,10 +22,7 @@ const updateLocalStorage = () => {
         })
     })
     localStorage.setItem('projects', JSON.stringify(data));
-    console.log('before updating projectsArray')
-    console.log(localStorage)
     updateProjectsArray();
-    console.log('projectsArray updated');
 }
 
 const updateProjectsArray = () => {
@@ -40,34 +33,23 @@ const updateProjectsArray = () => {
         project.tasks.forEach(task => {
             taskList.push(createTask(task.name, task.desc, task.dueDate, task.priority, task.isDone));
         })
-        console.log(`the resulting taskList from localStorage for ${project.name}`)
-        console.log(taskList);
         projectsArray.push(createProject(project.name, project.desc, taskList));
     })
-    console.log('projectsArray updated!')
-    console.log(projectsArray);
 }
 
 const pushProjectToArray = (project) => {
     projectsArray.push(project);
-    console.log('calling updateLocalStorage from pushProjectToArray');
     updateLocalStorage(projectsArray);
 }
 
 const pushTaskToProject = (task, listIndex) => {
-    console.log(task);
-    console.log(`pushing ${task} to ${listIndex}`);
     projectsArray[listIndex].addProjectTask(task);
-    console.log('task pushed')
-    console.log('calling updateLocalStorage from pushTaskToProject');
     updateLocalStorage(projectsArray);
 }
 
 const getTasks = (taskList) => {
     const tasksArray = [];
     taskList.forEach(task => {
-        console.log('task pushed to taskArray:')
-        console.log(task.getTaskName());
         tasksArray.push({
             name: task.getTaskName(),
             desc: task.getTaskDesc(),

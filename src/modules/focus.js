@@ -32,9 +32,7 @@ const switchProjectFocus = (projectToFocus) => {
     projectDesc.textContent = projectsArray[listIndex].getProjectDesc();
 
     const addTaskBtn = selectElement('add-task-btn');
-    console.log('selected add-task-btn');
     addTaskBtn.outerHTML = addTaskBtn.outerHTML;
-    console.log('add-task-btn reset');
     addEventListenerAddTaskBtn(listIndex);
 
     const projectDeleteButton = selectElement(`delete-project-btn-${listIndex + 1}`);
@@ -42,7 +40,6 @@ const switchProjectFocus = (projectToFocus) => {
     projectDeleteButton.classList.remove('hidden');
     projectEditButton.classList.remove('hidden');
 
-    console.log('calling renderTasks from switchProjectFocus');
     renderTasks(projectsArray, projectToFocus);
 }
 

@@ -13,7 +13,6 @@ const regEx = {
 }
 
 const addListenerSaveTaskBtn = (listIndex) => {
-    console.log(`listIndex: ${listIndex}`);
     const saveTaskBtn = selectElement('save-task-btn');
     saveTaskBtn.onclick = function (e) {
         e.preventDefault();
@@ -21,7 +20,6 @@ const addListenerSaveTaskBtn = (listIndex) => {
         const desc = selectElement('add-task-desc-input');
         const dueDate = selectElement('add-task-date-input');
         const priorities =  selectElement('add-task-priority-input');
-        console.log('calling getPriority()');
         const priority = getPriority(priorities);
         const errMsg = selectElement('add-task-err-msg');
         if (
@@ -30,7 +28,6 @@ const addListenerSaveTaskBtn = (listIndex) => {
             validateDueDate(dueDate) === true &&
             validatePriority(priority) === true
         ) {
-            console.log('everything validates')
             errMsg.classList.add('hidden');
             const newTask = createTask(name.value, desc.value, dueDate.value, priority);
             pushTaskToProject(newTask, listIndex);
@@ -56,8 +53,7 @@ const addListenerSaveTaskBtn = (listIndex) => {
     }
 }
 
-const closeForm = (listIndex) => {;
-    console.log('task saved, re-rendering projects...')
+const closeForm = (listIndex) => {
     renderTasks(projectsArray, `task-list-item-${listIndex + 1}`);
     const sidePanel = document.getElementById('side-panel');
     sidePanel.classList.remove('inactive', 'blurred');

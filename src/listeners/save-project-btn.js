@@ -27,7 +27,6 @@ const addListenerSaveProjectBtn = () => {
             errMsg.classList.add('hidden');
             let taskList = [];
             const newProject = createProject(name.value, desc.value, taskList);
-            console.log(JSON.stringify(newProject));
             pushProjectToArray(newProject);
             closeForm();
         } else {

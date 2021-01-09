@@ -23,13 +23,9 @@ const createTaskFromHeader = _ => {
 }
 
 const createTaskFormInputs = (projectListIndex, taskListIndex) => {
-    console.log(`projectListIndex: ${projectListIndex}`);
-    console.log(`taskListIndex: ${taskListIndex}`);
     let taskList = [];
-    console.log('attempting to get tasks...')
+
     taskList = projectsArray[projectListIndex].getProjectTasks();
-    console.log('tasks retrieved');
-    console.log(taskList);
     // Inputs
     const taskFormInputs = createElement('div', 'edit-task-inputs', 'form-inputs');
     appendElement('edit-task-form', taskFormInputs);
@@ -94,10 +90,8 @@ const createTaskFormInputs = (projectListIndex, taskListIndex) => {
     priorityHighRadio.setAttribute('type', 'radio');
     priorityHighRadio.setAttribute('name', 'priority');
     priorityHighRadio.setAttribute('value', 'high');
-    console.log('checking for priority...');
     if (savedPriority === 'high') {
         priorityHighRadio.checked = true;
-        console.log(`priority set to ${savedPriority}`)
     }
 
     const priorityHighLabel = createElement('label', 'priority-high-label', 'priority-label', 'High');
@@ -107,10 +101,8 @@ const createTaskFormInputs = (projectListIndex, taskListIndex) => {
     priorityNormalRadio.setAttribute('type', 'radio');
     priorityNormalRadio.setAttribute('name', 'priority');
     priorityNormalRadio.setAttribute('value', 'normal');
-    console.log('checking for priority...');
     if (savedPriority === 'normal') {
         priorityNormalRadio.checked = true;
-        console.log(`priority set to ${savedPriority}`)
     }
 
     const priorityNormalLabel = createElement('label', 'priority-normal-label', 'priority-label', 'Normal');
@@ -120,10 +112,8 @@ const createTaskFormInputs = (projectListIndex, taskListIndex) => {
     priorityLowRadio.setAttribute('type', 'radio');
     priorityLowRadio.setAttribute('name', 'priority');
     priorityLowRadio.setAttribute('value', 'low');
-    console.log('checking for priority...');
     if (savedPriority === 'low') {
         priorityLowRadio.checked = true;
-        console.log(`priority set to ${savedPriority}`)
     }
 
     const priorityLowLabel = createElement('label', 'priority-low-label', 'priority-label', 'Low');
@@ -156,7 +146,6 @@ const createTaskFormControls = _ => {
 }
 
 const createEditTaskForm = (projectListIndex, taskListIndex) => {
-    console.log('creating edit task form...')
     createTaskFormContainer();
     createTaskFormBody();
     createTaskFromHeader();

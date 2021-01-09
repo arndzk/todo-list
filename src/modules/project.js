@@ -1,6 +1,5 @@
 const createProject = (name, desc, tasks) => {
     let projectTasks = tasks;
-    console.log(projectTasks);
     let projectName = name;
     let projectDesc = desc;
     let projectFocus = false;
@@ -22,15 +21,7 @@ const createProject = (name, desc, tasks) => {
         projectFocus = editedFocus;
     }
     const addProjectTask = (task) => {
-        console.log('trying to push task...')
-        console.log('this is the task:');
-        console.log(task);
-        console.log('this is the task name');
-        console.log(task.getTaskName());
         projectTasks.push(task);
-        console.log('the task is pushed!')
-        console.log('this is the projectTasks');
-        console.log(getProjectTasks());
     }
     const removeProjectTask = (taskIndex) => projectTasks.splice(taskIndex, 1);
 

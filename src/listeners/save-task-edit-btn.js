@@ -13,8 +13,6 @@ const regEx = {
 }
 
 const addListenerSaveTaskEditBtn = (projectListIndex, taskListIndex) => {
-    console.log(`projectListIndex: ${projectListIndex}`);
-    console.log(`taskListIndex: ${taskListIndex}`);
     const saveTaskEditBtn = selectElement('save-task-edit-btn');
     saveTaskEditBtn.onclick = function (e) {
         e.preventDefault();
@@ -22,7 +20,6 @@ const addListenerSaveTaskEditBtn = (projectListIndex, taskListIndex) => {
         const desc = selectElement('edit-task-desc-input');
         const dueDate = selectElement('edit-task-date-input');
         const priorities =  selectElement('edit-task-priority-input');
-        console.log('calling getPriority()');
         const priority = getPriority(priorities);
         const errMsg = selectElement('edit-task-err-msg');
         if (
@@ -31,11 +28,9 @@ const addListenerSaveTaskEditBtn = (projectListIndex, taskListIndex) => {
             validateDueDate(dueDate) === true &&
             validatePriority(priority) === true
         ) {
-            console.log('everything validates')
             errMsg.classList.add('hidden');
             let taskList = [];
             taskList = projectsArray[projectListIndex].getProjectTasks();
-            console.log(taskList);
             taskList[taskListIndex].editTaskName(name.value);
             taskList[taskListIndex].editTaskDesc(desc.value);
             taskList[taskListIndex].editTaskDueDate(dueDate.value);
@@ -63,8 +58,7 @@ const addListenerSaveTaskEditBtn = (projectListIndex, taskListIndex) => {
     }
 }
 
-const closeForm = (projectListIndex) => {;
-    console.log('task saved, re-rendering projects...')
+const closeForm = (projectListIndex) => {
     renderTasksfromEdit(projectsArray, `task-list-item-${projectListIndex}`);
     const sidePanel = document.getElementById('side-panel');
     sidePanel.classList.remove('inactive', 'blurred');

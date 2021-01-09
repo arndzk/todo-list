@@ -29,7 +29,6 @@ const createDeletePromptControls = _ => {
 
 
 const createDeletePrompt = (projectListIndex, taskListIndex) => {
-    console.log(`creating delete prompt for task ${taskListIndex} in project ${projectListIndex}`)
     createDeletePromptContainer();
     createDeletePromptBody();
     createDeletePromptText();

@@ -40,9 +40,7 @@ const renderProjects = (projectsArray, projectToFocus) => {
     if (projectToFocus != null) {
         const listItems = projectsList.getElementsByTagName('li');
         if (listItems.length > 0) {
-            console.log('calling switchProjectFocus from renderProjects')
             switchProjectFocus(projectToFocus);
-            // console.log('calling renderTasks from renderProjects')
             // renderTasks(projectsArray, projectToFocus);
         }
     }
@@ -51,39 +49,25 @@ const renderProjects = (projectsArray, projectToFocus) => {
 }
 
 const renderTasks = (projectsArray, projectToFocus) => {
-    console.log('rendering tasks...')
-    console.log(projectToFocus);
     const taskList = selectElement('task-list');
     const listIndex = projectToFocus.substr(projectToFocus.length - 1);
     const arrayIndex = parseInt(listIndex) - 1;
-    console.log(`arrayIndex: ${arrayIndex}`);
-    console.log(`array-index: ${arrayIndex}`);
     while (taskList.lastElementChild) {
         taskList.removeChild(taskList.lastElementChild);
     }
-    console.log('task-list reset')
     let projectTasks = [];
     projectTasks = projectsArray[arrayIndex].getProjectTasks();
-    console.log('let us see the state of projectsArray');
-    console.log(projectsArray);
-    console.log('let us see the state of projectTasks');
-    console.log(projectTasks);
     let i = 0;
     projectTasks.forEach(task => {
         const taskDiv = createElement('li', `task-list-item-${i}`, `task-list-item`);
-        console.log('creating taskCheck')
         const taskCheck = createElement('div', `task-check-${i}`, 'task-check');
         if (task.getTaskPriority() === 'low') {
-            console.log(task.getTaskPriority());
             taskCheck.classList.add('low-check');
         } else if (task.getTaskPriority() === 'normal') {
-            console.log(task.getTaskPriority());
             taskCheck.classList.add('normal-check');
         } else if (task.getTaskPriority() === 'high') {
-            console.log(task.getTaskPriority());
             taskCheck.classList.add('high-check');
         }
-        console.log('created taskCheck')
         appendElement('task-list', taskDiv);
         appendElement(`task-list-item-${i}`, taskCheck);
 
@@ -110,39 +94,25 @@ const renderTasks = (projectsArray, projectToFocus) => {
 }
 
 const renderTasksfromEdit = (projectsArray, projectToFocus, taskToFocus) => {
-    console.log('rendering tasks...')
-    console.log(projectToFocus);
     const taskList = selectElement('task-list');
     const listIndex = projectToFocus.substr(projectToFocus.length - 1);
     const arrayIndex = parseInt(listIndex);
-    console.log(`list-index: ${listIndex}`);
-    console.log(`array-index: ${arrayIndex}`);
     while (taskList.lastElementChild) {
         taskList.removeChild(taskList.lastElementChild);
     }
-    console.log('task-list reset')
     let projectTasks = [];
     projectTasks = projectsArray[arrayIndex].getProjectTasks();
-    console.log('let us see the state of projectsArray');
-    console.log(projectsArray);
-    console.log('let us see the state of projectTasks');
-    console.log(projectTasks);
     let i = 0;
     projectTasks.forEach(task => {
         const taskDiv = createElement('li', `task-list-item-${i}`, `task-list-item`);
-        console.log('creating taskCheck')
         const taskCheck = createElement('div', `task-check-${i}`, 'task-check');
         if (task.getTaskPriority() === 'low') {
-            console.log(task.getTaskPriority());
             taskCheck.classList.add('low-check');
         } else if (task.getTaskPriority() === 'normal') {
-            console.log(task.getTaskPriority());
             taskCheck.classList.add('normal-check');
         } else if (task.getTaskPriority() === 'high') {
-            console.log(task.getTaskPriority());
             taskCheck.classList.add('high-check');
         }
-        console.log('created taskCheck')
         appendElement('task-list', taskDiv);
         appendElement(`task-list-item-${i}`, taskCheck);
 

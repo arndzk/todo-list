@@ -25,7 +25,6 @@ const addListenerSaveProjectEditBtn = (indexOfElement) => {
             errMsg.classList.add('hidden');
             projectsArray[indexOfElement].editProjectName(name.value);
             projectsArray[indexOfElement].editProjectDesc(desc.value);
-            console.log('calling updateLocalStorage from SaveProjectEdit')
             updateLocalStorage();
             closeForm(indexOfElement);
         } else {

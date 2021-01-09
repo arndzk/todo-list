@@ -5,12 +5,10 @@ import selectElement from '../utils/element-selector';
 import removeElement from '../utils/element-remover';
 
 const addListenerTaskDeleteConfirmBtn = (projectListIndex, taskListIndex) => {
-    console.log('adding confirm listener...')
     const confirmBtn = selectElement('task-delete-confirm-btn');
     confirmBtn.addEventListener('click', () => {
         let taskList = projectsArray[projectListIndex].getProjectTasks();
         taskList.splice(taskListIndex, 1);
-        console.log('calling updateLocalStorage from taskDeleteConfirmBtn')
         updateLocalStorage();
         closePrompt(projectListIndex);
     }, false);

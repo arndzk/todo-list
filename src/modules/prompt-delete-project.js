@@ -29,7 +29,6 @@ const createDeletePromptControls = _ => {
 
 
 const createDeletePrompt = (indexOfElement) => {
-    console.log(`creating delete prompt for item ${indexOfElement + 1}`)
     createDeletePromptContainer();
     createDeletePromptBody();
     createDeletePromptText();
