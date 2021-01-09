@@ -3,7 +3,9 @@ import { validateTextInput, validatePriority, validateDueDate } from '../utils/v
 import getPriority from '../utils/priority-getter';
 import createTask from '../modules/task';
 import { pushTaskToProject } from '../modules/local-storage';
+import { renderTasks } from '../modules/render';
 import removeElement from '../utils/element-remover';
+import { projectsArray } from '../index';
 
 const regEx = {
     name: /^[.,:!?'-À-ÿ\w\s]{1,20}$/,
@@ -11,7 +13,7 @@ const regEx = {
 }
 
 const addListenerSaveTaskBtn = (listIndex) => {
-    console.log(listIndex);
+    console.log(`listIndex: ${listIndex}`);
     const saveTaskBtn = selectElement('save-task-btn');
     saveTaskBtn.onclick = function () {
         const name = selectElement('add-task-name-input');
@@ -37,7 +39,7 @@ const addListenerSaveTaskBtn = (listIndex) => {
             console.log(newTask.getTaskDueDate())
             console.log(newTask.getIsDone())
             pushTaskToProject(newTask, listIndex);
-            closeForm();
+            closeForm(listIndex);
         } else {
             if (errMsg.classList.contains('hidden')) {
                 errMsg.classList.remove('hidden');
@@ -53,7 +55,11 @@ const addListenerSaveTaskBtn = (listIndex) => {
     }
 }
 
-const closeForm = _ => {
+const closeForm = (listIndex) => {
+    const taskList = selectElement('task-list');
+    const listItems = taskList.getElementsByTagName('li');
+    console.log('task saved, re-rendering projects...')
+    renderTasks(projectsArray, `task-list-item-${listIndex}`);
     const sidePanel = document.getElementById('side-panel');
     sidePanel.classList.remove('inactive', 'blurred');
     const centerPanel = document.getElementById('center-panel');
