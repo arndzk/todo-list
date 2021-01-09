@@ -83,10 +83,25 @@ const renderTasks = (projectsArray, projectToFocus) => {
         console.log('created taskCheck')
         appendElement('task-list', taskDiv);
         appendElement(`task-list-item-${i}`, taskCheck);
+
         const taskItemName = createElement('span', `task-name-${i}`, 'task-name', task.getTaskName());
         appendElement(`task-list-item-${i}`, taskItemName);
         const taskDueDate = createElement('span', `task-due-date-${i}`, 'task-due-date', task.getTaskDueDate());
         appendElement(`task-list-item-${i}`, taskDueDate);
+
+        // Edit & Delete Buttons
+        const editTaskBtn = createElement('div', `edit-task-btn-${i}`, 'edit-task-btn');
+        const editTaskBtnIcon = createElement('span', `edit-task-icon-${i}`, 'edit-task-icon', 'edit');
+        editTaskBtnIcon.classList.add('material-icons');
+        const deleteTaskBtn = createElement('div', `delete-task-btn-${i}`, 'delete-task-btn');
+        const deleteTaskBtnIcon = createElement('span', `delete-task-icon-${i}`, 'delete-task-icon', 'delete');
+        deleteTaskBtnIcon.classList.add('material-icons');
+        appendElement(`task-list-item-${i}`, editTaskBtn);
+        appendElement(`task-list-item-${i}`, deleteTaskBtn);
+        appendElement(`edit-task-btn-${i}`, editTaskBtnIcon);
+        appendElement(`delete-task-btn-${i}`, deleteTaskBtnIcon);
+
+
         i++;
     })
 }

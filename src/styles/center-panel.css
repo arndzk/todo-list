@@ -66,6 +66,7 @@
 }
 
 .task-check {
+    margin: 0px 10px 0px 10px;
     display: block;
     width: 1em;
     height: 1em;
@@ -83,6 +84,24 @@
 
 .high-check {
     border-color: #ff6961;
+}
+
+.task-name {
+    margin: 0px 5px 0px 5px;
+    flex-grow: 3;
+}
+
+.task-due-date {
+    margin: 0px 5px 0px 5px;
+    flex-grow: 1;
+}
+
+.edit-task-btn {
+    margin: 0px 5px 0px 5px;
+}
+
+.delete-task-btn {
+    margin: 0px 5px 0px 5px;
 }
 
 #task-list-controls {
