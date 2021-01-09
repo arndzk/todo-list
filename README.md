@@ -12,12 +12,19 @@
 - [x] it should have a way to edit a ~~todo~~ project
 - [x] it should have a way to remove a ~~todo~~ project
 - [x] it should have a way to display tasks
-- [x] it should have a way to add a task
- - [x] it should have a way to add a task name
- - [ ] it should have a way to add a task due date
- - [ ] it should have a way to add a task priority
-- [ ] it should have a way to edit a task
-- [ ] it should have a way to delete a task
+- [x] it should have a way to add a task - 07/01
+ - [x] it should have a way to add a task name - 07/01
+ - [x] it should have a way to add a task due date - 08/01
+ - [x] it should have a way to add a task priority - 08/01
+- [x] it should have a way to edit a task - 09/01
+- [x] it should have a way to delete a task - 09/01
+- [ ] it should have a way to check a task as done/not done
+
+### Nice-to-have Changes:
+
+- [ ] move Add Project and Add Task buttons to the top of their respective lists
+- [ ] make Task List scrollable
+- [ ] make Tasks focusable and their buttons clickable on focus
 
 ### Bugs
 
@@ -52,3 +59,16 @@
   I haven't had figured out how to properly store an array of objects in an object in an array of
   objects in localStorage.
   - After solving the above, retrieving and rendering tasks also became possible.
+
+#### 08/01
+
+  - Extended the task additon feature by allowing the addition of descriptions, due dates and priority.
+  The priority buttons themselves are custom radio buttons.
+  - All data for each task-list-item are displayed, priority is signified by the color of the task's 
+  corresponding "check circle".
+
+#### 09/01
+
+  - Task list items now have their own edit and delete buttons.
+  - Tasks can now be edited - task editing form requires further styling.
+  - Tasks can now be deleted.

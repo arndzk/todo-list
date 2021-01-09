@@ -6,6 +6,7 @@ import { switchProjectFocus } from './focus';
 import addListenerProjectDeleteBtn from '../listeners/delete-project-btn';
 import addListenerProjectEditBtn from '../listeners/edit-task-btn';
 import addListenerTaskEditBtn from '../listeners/edit-task-btn';
+import addListenerTaskDeleteBtn from '../listeners/delete-task-btn';
 
 const renderProjects = (projectsArray, projectToFocus) => {
     const projectsList = selectElement('projects-list');
@@ -103,6 +104,7 @@ const renderTasks = (projectsArray, projectToFocus) => {
         appendElement(`edit-task-btn-${i}`, editTaskBtnIcon);
         appendElement(`delete-task-btn-${i}`, deleteTaskBtnIcon);
         addListenerTaskEditBtn(`edit-task-btn-${i}`, arrayIndex, i);
+        addListenerTaskDeleteBtn(`delete-task-btn-${i}`, arrayIndex, i);
         i++;
     })
 }
@@ -161,6 +163,7 @@ const renderTasksfromEdit = (projectsArray, projectToFocus, taskToFocus) => {
         appendElement(`edit-task-btn-${i}`, editTaskBtnIcon);
         appendElement(`delete-task-btn-${i}`, deleteTaskBtnIcon);
         addListenerTaskEditBtn(`edit-task-btn-${i}`, arrayIndex, i);
+        addListenerTaskDeleteBtn(`delete-task-btn-${i}`, arrayIndex, i);
         i++;
     })
 }
