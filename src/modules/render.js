@@ -4,7 +4,8 @@ import selectElement from '../utils/element-selector';
 import addListenerProjectListItem from '../listeners/project-list-item';
 import { switchProjectFocus } from './focus';
 import addListenerProjectDeleteBtn from '../listeners/delete-project-btn';
-import addListenerProjectEditBtn from '../listeners/edit-project-btn';
+import addListenerProjectEditBtn from '../listeners/edit-task-btn';
+import addListenerTaskEditBtn from '../listeners/edit-task-btn';
 
 const renderProjects = (projectsArray, projectToFocus) => {
     const projectsList = selectElement('projects-list');
@@ -100,6 +101,7 @@ const renderTasks = (projectsArray, projectToFocus) => {
         appendElement(`task-list-item-${i}`, deleteTaskBtn);
         appendElement(`edit-task-btn-${i}`, editTaskBtnIcon);
         appendElement(`delete-task-btn-${i}`, deleteTaskBtnIcon);
+        addListenerTaskEditBtn(`edit-task-btn-${i}`, arrayIndex, i);
 
 
         i++;
