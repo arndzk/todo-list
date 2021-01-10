@@ -234,6 +234,24 @@
     flex-direction: column;
 }
 
+#add-task-date-input {
+    margin: 0px 10px 0px 10px;
+    padding: 2px 5px 2px 5px;
+    background-color: var(--background);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    color: var(--primary-text);
+}
+
+#edit-task-date-input {
+    margin: 0px 10px 0px 10px;
+    padding: 2px 5px 2px 5px;
+    background-color: var(--background);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    color: var(--primary-text);
+}
+
 .task-priority-input-field label { 
     padding-left: 10px;
     margin-bottom: 5px;
@@ -244,6 +262,13 @@
 }
 
 #add-task-priority-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#edit-task-priority-input {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
