@@ -39,7 +39,7 @@ const createTask = (name, desc, dueDate, priority, status) => {
         taskPriority = editedPriority;
     }
     const editIsDone = _ => {
-        isDone != isDone;
+        isDone = !isDone;
     }
 
     return {

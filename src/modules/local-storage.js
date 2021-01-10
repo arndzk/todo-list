@@ -61,10 +61,19 @@ const getTasks = (taskList) => {
     return tasksArray;
 }
 
+const checkTask = (task) => {
+    console.log('checking task...')
+    console.log(task.getIsDone());
+    task.editIsDone();
+    updateLocalStorage();
+    console.log(task.getIsDone());
+}
+
 export {
     setupLocalStorage,
     updateLocalStorage,
     updateProjectsArray,
     pushProjectToArray,
-    pushTaskToProject
+    pushTaskToProject,
+    checkTask
 }

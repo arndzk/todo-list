@@ -66,12 +66,18 @@
 }
 
 .task-check {
-    margin: 0px 10px 0px 10px;
     display: block;
+    position: absolute;
     width: 1em;
     height: 1em;
     border-radius: 50%;
     border: 0.1em solid var(--line);
+}
+
+.task-input {
+    margin: 0px 10px 0px 10px;
+    width: 1em;
+    height: 1em;
 }
 
 .low-check {
@@ -111,4 +117,9 @@
 
 #add-task-btn:hover {
     background-color: var(--side-panel);
+}
+
+.checked {
+    color: var(--secondary-text);
+    text-decoration: line-through;
 }

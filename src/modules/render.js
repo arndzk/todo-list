@@ -7,6 +7,7 @@ import addListenerProjectDeleteBtn from '../listeners/delete-project-btn';
 import addListenerProjectEditBtn from '../listeners/edit-task-btn';
 import addListenerTaskEditBtn from '../listeners/edit-task-btn';
 import addListenerTaskDeleteBtn from '../listeners/delete-task-btn';
+import addListenerTaskCheckInput from '../listeners/task-check-input';
 
 const renderProjects = (projectsArray, projectToFocus) => {
     const projectsList = selectElement('projects-list');
@@ -60,21 +61,33 @@ const renderTasks = (projectsArray, projectToFocus) => {
     let i = 0;
     projectTasks.forEach(task => {
         const taskDiv = createElement('li', `task-list-item-${i}`, `task-list-item`);
-        const taskCheck = createElement('div', `task-check-${i}`, 'task-check');
-        if (task.getTaskPriority() === 'low') {
-            taskCheck.classList.add('low-check');
-        } else if (task.getTaskPriority() === 'normal') {
-            taskCheck.classList.add('normal-check');
-        } else if (task.getTaskPriority() === 'high') {
-            taskCheck.classList.add('high-check');
-        }
+        const taskCheck = createElement('span', `task-check-${i}`, 'task-check');
+        const taskInput  = createElement('span', `task-input-${i}`, 'task-input');
+        const isDone = task.getIsDone();
+
         appendElement('task-list', taskDiv);
-        appendElement(`task-list-item-${i}`, taskCheck);
+        appendElement(`task-list-item-${i}`, taskInput);
+        appendElement(`task-input-${i}`, taskCheck);
 
         const taskItemName = createElement('span', `task-name-${i}`, 'task-name', task.getTaskName());
         appendElement(`task-list-item-${i}`, taskItemName);
         const taskDueDate = createElement('span', `task-due-date-${i}`, 'task-due-date', task.getTaskDueDate());
         appendElement(`task-list-item-${i}`, taskDueDate);
+
+        if (isDone === false) {
+            if (task.getTaskPriority() === 'low') {
+                taskCheck.classList.add('low-check');
+            } else if (task.getTaskPriority() === 'normal') {
+                taskCheck.classList.add('normal-check');
+            } else if (task.getTaskPriority() === 'high') {
+                taskCheck.classList.add('high-check');
+            }
+        } else if (isDone === true) {
+            taskCheck.classList.add('material-icons');
+            taskCheck.innerHTML = 'check';
+            taskItemName.classList.add('checked');
+            taskDueDate.classList.add('checked');
+        }
 
         // Edit & Delete Buttons
         const editTaskBtn = createElement('div', `edit-task-btn-${i}`, 'edit-task-btn');
@@ -89,6 +102,7 @@ const renderTasks = (projectsArray, projectToFocus) => {
         appendElement(`delete-task-btn-${i}`, deleteTaskBtnIcon);
         addListenerTaskEditBtn(`edit-task-btn-${i}`, arrayIndex, i);
         addListenerTaskDeleteBtn(`delete-task-btn-${i}`, arrayIndex, i);
+        addListenerTaskCheckInput(`task-check-${i}`, arrayIndex, i);
         i++;
     })
 }
@@ -105,21 +119,33 @@ const renderTasksfromEdit = (projectsArray, projectToFocus, taskToFocus) => {
     let i = 0;
     projectTasks.forEach(task => {
         const taskDiv = createElement('li', `task-list-item-${i}`, `task-list-item`);
-        const taskCheck = createElement('div', `task-check-${i}`, 'task-check');
-        if (task.getTaskPriority() === 'low') {
-            taskCheck.classList.add('low-check');
-        } else if (task.getTaskPriority() === 'normal') {
-            taskCheck.classList.add('normal-check');
-        } else if (task.getTaskPriority() === 'high') {
-            taskCheck.classList.add('high-check');
-        }
+        const taskCheck = createElement('span', `task-check-${i}`, 'task-check');
+        const taskInput  = createElement('span', `task-input-${i}`, 'task-input');
+        const isDone = task.getIsDone();
+
         appendElement('task-list', taskDiv);
-        appendElement(`task-list-item-${i}`, taskCheck);
+        appendElement(`task-list-item-${i}`, taskInput);
+        appendElement(`task-input-${i}`, taskCheck);
 
         const taskItemName = createElement('span', `task-name-${i}`, 'task-name', task.getTaskName());
         appendElement(`task-list-item-${i}`, taskItemName);
         const taskDueDate = createElement('span', `task-due-date-${i}`, 'task-due-date', task.getTaskDueDate());
         appendElement(`task-list-item-${i}`, taskDueDate);
+
+        if (isDone === false) {
+            if (task.getTaskPriority() === 'low') {
+                taskCheck.classList.add('low-check');
+            } else if (task.getTaskPriority() === 'normal') {
+                taskCheck.classList.add('normal-check');
+            } else if (task.getTaskPriority() === 'high') {
+                taskCheck.classList.add('high-check');
+            }
+        } else if (isDone === true) {
+            taskCheck.classList.add('material-icons');
+            taskCheck.innerHTML = 'check';
+            taskItemName.classList.add('checked');
+            taskDueDate.classList.add('checked');
+        }
 
         // Edit & Delete Buttons
         const editTaskBtn = createElement('div', `edit-task-btn-${i}`, 'edit-task-btn');

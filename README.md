@@ -18,7 +18,7 @@
  - [x] it should have a way to add a task priority - 08/01
 - [x] it should have a way to edit a task - 09/01
 - [x] it should have a way to delete a task - 09/01
-- [ ] it should have a way to check a task as done/not done
+- [x] it should have a way to check a task as done/not done
 
 ### Nice-to-have Changes:
 
@@ -72,3 +72,8 @@
   - Task list items now have their own edit and delete buttons.
   - Tasks can now be edited - task editing form requires further styling.
   - Tasks can now be deleted.
+
+#### 10/01
+
+  - Tasks can now be marked and unmarked, which changes their isDone value between 
+  false and true.
