@@ -22,9 +22,12 @@
 
 ### Nice-to-have Changes:
 
-- [ ] move Add Project and Add Task buttons to the top of their respective lists
-- [ ] make Task List scrollable
+- [x] move Add Project and Add Task buttons to the top of their respective lists
+- [x] make Task List scrollable
 - [ ] make Tasks focusable and their buttons clickable on focus
+- [ ] implement expandable divs for the descriptions of both Projects and Tasks
+- [ ] implement a day countdown for task due dates
+- [ ] task sort by priority
 
 ### Bugs
 

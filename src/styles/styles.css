@@ -25,7 +25,7 @@ body {
 #header {
     margin-left: 30px;
     min-height: 64px;
-    flex-grow: 0.25;
+    max-height: 15%;
     text-align: left;
     display: flex;
     flex-direction: row;
@@ -63,7 +63,7 @@ body {
 footer {
     text-align: left;
     color: #9e9e9e;
-    flex-grow: 0.25;
+    max-height: 15%;
 }
 
 .btn {
@@ -83,7 +83,8 @@ footer {
 }
 
 .btn:hover {
-    background-color: var(--center-panel);
+    color: var(--focus);
+    border: 1px solid var(--focus);
 }
 
 .btn:active {

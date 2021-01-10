@@ -10,6 +10,9 @@
 }
 
 #projects-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     padding: 10px 5px 10px 5px;
     margin: 0px 30px 0px 30px;
     min-height: 60px;
@@ -25,11 +28,9 @@
 #projects-list-container {
     overflow-y: scroll;
     max-width: 330px;
-    max-height: 500px;
 }
 
 #projects-list {
-    min-height: 500px;
     max-width: 330px;
     list-style-type: none;
     display: flex;
@@ -115,7 +116,31 @@
 }
 
 #projects-controls {
-    margin: 0px 30px 0px 30px;
-    text-align: left;
-    border-top: 1px solid var(--line);
+    display: flex;
+    flex-direction: row;
+    flex-grow: 3;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+#add-project-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 5px;
+    color: var(--focus);
+    border: 1px solid var(--focus);
+}
+
+#add-project-btn:hover {
+    color: var(--focus);
+    border: 1px solid var(--focus);
+    cursor: pointer;
+}
+
+#add-project-btn:active {
+    color: var(--side-panel);
+    border: 1px solid var(--focus);
+    background-color: var(--focus);
 }

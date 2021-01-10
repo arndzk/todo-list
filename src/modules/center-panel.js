@@ -4,10 +4,12 @@ import appendElement from '../utils/element-appender';
 const createProjectHeader = _ => {
     const projectHeader = createElement('div', 'project-header');
     appendElement('center-panel', projectHeader);
+    const projectDataContainer = createElement('div', 'project-data-container');
+    appendElement('project-header', projectDataContainer);
     const projectTitle = createElement('div', 'project-title');
-    appendElement('project-header', projectTitle);
+    appendElement('project-data-container', projectTitle);
     const projectDesc = createElement('div', 'project-desc');
-    appendElement('project-header', projectDesc);
+    appendElement('project-data-container', projectDesc);
 }
 
 const createTaskList = _ => {
@@ -20,7 +22,7 @@ const createTaskList = _ => {
 const createTaskListControls = _ => {
     const taskListControls = createElement('div', 'task-list-controls');
     const addTaskButton = createElement('button', 'add-task-btn', 'btn', 'Add Task');
-    appendElement('task-list-container', taskListControls);
+    appendElement('project-header', taskListControls);
     appendElement('task-list-controls', addTaskButton);
 }
 

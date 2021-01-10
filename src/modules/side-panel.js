@@ -14,15 +14,15 @@ const createProjectsList = _ => {
 }
 const createProjectsControls = _ => {
     const projectsControls = createElement('div', 'projects-controls');
-    appendElement('side-panel', projectsControls);
+    appendElement('projects-header', projectsControls);
     const addProjectBtn = createElement('button', 'add-project-btn', 'btn', 'Add Project');
     appendElement('projects-controls', addProjectBtn);
 }
 
 const loadSidePanel = (projectsArray) => {
     createProjectsHeader();
-    createProjectsList();
     createProjectsControls();
+    createProjectsList();
     addListenerAddProjectBtn(projectsArray);
 }
 

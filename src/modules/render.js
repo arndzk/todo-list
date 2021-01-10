@@ -71,7 +71,9 @@ const renderTasks = (projectsArray, projectToFocus) => {
 
         const taskItemName = createElement('span', `task-name-${i}`, 'task-name', task.getTaskName());
         appendElement(`task-list-item-${i}`, taskItemName);
-        const taskDueDate = createElement('span', `task-due-date-${i}`, 'task-due-date', task.getTaskDueDate());
+        const taskDesc = createElement('span', `task-desc-${i}`, 'task-desc', task.getTaskDesc());
+        appendElement(`task-list-item-${i}`, taskDesc);
+        const taskDueDate = createElement('span', `task-due-date-${i}`, 'task-due-date', `Due on: ${task.getTaskDueDate()}`);
         appendElement(`task-list-item-${i}`, taskDueDate);
 
         if (isDone === false) {
@@ -86,6 +88,7 @@ const renderTasks = (projectsArray, projectToFocus) => {
             taskCheck.classList.add('material-icons');
             taskCheck.innerHTML = 'check';
             taskItemName.classList.add('checked');
+            taskDesc.classList.add('checked');
             taskDueDate.classList.add('checked');
         }
 
@@ -129,7 +132,9 @@ const renderTasksfromEdit = (projectsArray, projectToFocus, taskToFocus) => {
 
         const taskItemName = createElement('span', `task-name-${i}`, 'task-name', task.getTaskName());
         appendElement(`task-list-item-${i}`, taskItemName);
-        const taskDueDate = createElement('span', `task-due-date-${i}`, 'task-due-date', task.getTaskDueDate());
+        const taskDesc = createElement('span', `task-desc-${i}`, 'task-desc', task.getTaskDesc());
+        appendElement(`task-list-item-${i}`, taskDesc);
+        const taskDueDate = createElement('span', `task-due-date-${i}`, 'task-due-date', `Due on: ${task.getTaskDueDate()}`);
         appendElement(`task-list-item-${i}`, taskDueDate);
 
         if (isDone === false) {
@@ -144,6 +149,7 @@ const renderTasksfromEdit = (projectsArray, projectToFocus, taskToFocus) => {
             taskCheck.classList.add('material-icons');
             taskCheck.innerHTML = 'check';
             taskItemName.classList.add('checked');
+            taskDesc.classList.add('checked');
             taskDueDate.classList.add('checked');
         }
 

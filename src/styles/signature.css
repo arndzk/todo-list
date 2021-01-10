@@ -2,8 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
 #signature {
-    margin-top: 10px;
-    margin-left: 10px;
+    margin: 5px 0px 5px 10px;
     font-size: 12px;
     font-family: 'Source Code Pro', monospace;
     font-style: italic;

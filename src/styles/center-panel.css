@@ -13,9 +13,14 @@
     min-height: 60px;
     max-height: 60px;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+}
+
+#project-data-container {
     flex-direction: column;
     justify-content: space-evenly;
-    border-bottom: 1px solid var(--line);
 }
 
 #project-title {
@@ -36,8 +41,11 @@
     color: var(--secondary-text);
 }
 
+#task-list-container {
+    overflow-y: scroll;
+}
+
 #task-list {
-    min-height: 500px;
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -94,11 +102,19 @@
 
 .task-name {
     margin: 0px 5px 0px 5px;
-    flex-grow: 3;
+    width: 33%;
+}
+
+.task-desc {
+    margin: 0px 5px 0px 5px;
+    width: 11%;
+    font-size: 12px;
+    color: var(--secondary-text);
 }
 
 .task-due-date {
     margin: 0px 5px 0px 5px;
+    width: 33%;
     flex-grow: 1;
 }
 
@@ -111,12 +127,33 @@
 }
 
 #task-list-controls {
-    margin: 0px 30px 0px 30px;
+    display: flex;
+    flex-grow: 3;
+    align-items: center;
+    justify-content: flex-end;
     text-align: right;
 }
 
+#add-task-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 5px;
+    color: var(--focus);
+    border: 1px solid var(--focus)
+}
+
 #add-task-btn:hover {
-    background-color: var(--side-panel);
+    background-color: var(--center-panel);
+    border: 1px solid var(--focus);
+    cursor: pointer;
+}
+
+#add-task-btn:active {
+    color: var(--center-panel);
+    border: 1px solid var(--focus);
+    background-color: var(--focus);
 }
 
 .checked {

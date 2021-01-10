@@ -6,6 +6,7 @@ const addListenerTaskCheck = (taskCheckBtn, projectListIndex, taskListIndex) => 
     const taskCheck = selectElement(taskCheckBtn);
     const taskCheckInput = document.getElementById(`task-input-${taskListIndex}`);
     const taskName = document.getElementById(`task-name-${taskListIndex}`);
+    const taskDesc = document.getElementById(`task-desc-${taskListIndex}`);
     const taskDueDate = document.getElementById(`task-due-date-${taskListIndex}`);
     taskCheckInput.addEventListener('click', () => {
         console.log('click');
@@ -16,6 +17,7 @@ const addListenerTaskCheck = (taskCheckBtn, projectListIndex, taskListIndex) => 
             taskCheck.classList.remove('material-icons');
             taskCheck.innerHTML = '';
             taskName.classList.remove('checked');
+            taskDesc.classList.remove('checked');
             taskDueDate.classList.remove('checked');
             if (task.getTaskPriority() === 'low') {
                 taskCheck.classList.add('low-check');
@@ -36,6 +38,7 @@ const addListenerTaskCheck = (taskCheckBtn, projectListIndex, taskListIndex) => 
             taskCheck.classList.add('material-icons');
             taskCheck.innerHTML = 'check';
             taskName.classList.add('checked');
+            taskDesc.classList.add('checked');
             taskDueDate.classList.add('checked');
             checkTask(task);
         }
