@@ -4,7 +4,7 @@ import selectElement from '../utils/element-selector';
 import addListenerProjectListItem from '../listeners/project-list-item';
 import { switchProjectFocus } from './focus';
 import addListenerProjectDeleteBtn from '../listeners/delete-project-btn';
-import addListenerProjectEditBtn from '../listeners/edit-task-btn';
+import addListenerEditProjectBtn from '../listeners/edit-project-btn';
 import addListenerTaskEditBtn from '../listeners/edit-task-btn';
 import addListenerTaskDeleteBtn from '../listeners/delete-task-btn';
 import addListenerTaskCheckInput from '../listeners/task-check-input';
@@ -35,7 +35,7 @@ const renderProjects = (projectsArray, projectToFocus) => {
         appendElement(`delete-project-btn-${i + 1}`, deleteProjectIcon);
         addListenerProjectListItem(`project-list-item-${i + 1}`);
         addListenerProjectDeleteBtn(`delete-project-btn-${i + 1}`, i);
-        addListenerProjectEditBtn(`edit-project-btn-${i + 1}`, i);
+        addListenerEditProjectBtn(`edit-project-btn-${i + 1}`, i);
         i++;
     })
     if (projectToFocus != null) {
@@ -166,6 +166,7 @@ const renderTasksfromEdit = (projectsArray, projectToFocus, taskToFocus) => {
         appendElement(`delete-task-btn-${i}`, deleteTaskBtnIcon);
         addListenerTaskEditBtn(`edit-task-btn-${i}`, arrayIndex, i);
         addListenerTaskDeleteBtn(`delete-task-btn-${i}`, arrayIndex, i);
+        addListenerTaskCheckInput(`task-check-${i}`, arrayIndex, i);
         i++;
     })
 }
