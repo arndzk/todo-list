@@ -9,7 +9,6 @@ const addListenerTaskCheck = (taskCheckBtn, projectListIndex, taskListIndex) => 
     const taskDesc = document.getElementById(`task-desc-${taskListIndex}`);
     const taskDueDate = document.getElementById(`task-due-date-${taskListIndex}`);
     taskCheckInput.addEventListener('click', () => {
-        console.log('click');
         let taskList = [];
         taskList = projectsArray[projectListIndex].getProjectTasks();
         const task = taskList[taskListIndex];
