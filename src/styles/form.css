@@ -1,332 +1,332 @@
 @import '_dark-theme.css';
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .form-container {
-    position: absolute;
-    margin: 0px;
-    background-color: rgba(0,0,0,0.3);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  margin: 0px;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-body {
-    height: 66%;
-    width: 33%;
-    margin: auto;
-    background-color: var(--background);
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
+  height: 66%;
+  width: 33%;
+  margin: auto;
+  background-color: var(--background);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-header {
-    margin: 10px 30px 10px 30px;
-    display: flex;
-    flex-direction: row;
-    flex-grow: 0.2;
-    justify-content: start;
-    align-items: center;
-    font-size: 18px;
-    color: var(--primary-text);
-    border-bottom: 1px solid var(--line);
+  margin: 10px 30px 10px 30px;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 0.2;
+  justify-content: start;
+  align-items: center;
+  font-size: 18px;
+  color: var(--primary-text);
+  border-bottom: 1px solid var(--line);
 }
 
 .header-text {
-    padding-left: 10px;
+  padding-left: 10px;
 }
 
 .form-inputs {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 4;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 4;
+  justify-content: space-evenly;
 }
 
 .project-name-input-field {
-    margin: 10px 30px 10px 30px;
-    flex-grow: 0.1;
-    display: flex;
-    flex-direction: column;
+  margin: 10px 30px 10px 30px;
+  flex-grow: 0.1;
+  display: flex;
+  flex-direction: column;
 }
 
-.project-name-input-field label{
-    padding-left: 10px;
-    margin-bottom: 5px;
-    display: flex;
-    flex-direction: row;
-    color: var(--primary-text);
-    font-size: 16px;
-}
-
-.form-input {
-    margin: 0px 10px 0px 10px;
-    padding: 2px 5px 2px 5px;
-    height: 30%;
-    background-color: var(--background);
-    border-radius: 5px;
-    color: var(--primary-text);
-    resize: none;
-}
-
-.form-input:focus{
-    border: 1px solid var(--focus);
+.project-name-input-field label {
+  padding-left: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  color: var(--primary-text);
+  font-size: 16px;
 }
 
 .form-input {
-    border: 1px solid var(--line);
+  margin: 0px 10px 0px 10px;
+  padding: 2px 5px 2px 5px;
+  height: 30%;
+  background-color: var(--background);
+  border-radius: 5px;
+  color: var(--primary-text);
+  resize: none;
+}
+
+.form-input:focus {
+  border: 1px solid var(--focus);
+}
+
+.form-input {
+  border: 1px solid var(--line);
 }
 
 .empty-input {
-    border: 1px solid var(--error);
+  border: 1px solid var(--error);
 }
 
-.form-input input:focus{
-    border: 1px solid var(--focus);
+.form-input input:focus {
+  border: 1px solid var(--focus);
 }
 
 .project-desc-input-field {
-    margin: 10px 30px 10px 30px;
-    flex-grow: 3;
-    display: flex;
-    flex-direction: column;
-}
-
-.form-textarea{
-    resize: none;
-    margin: 0px 10px 0px 10px;
-    padding: 2px 5px 2px 5px;
-    height: 90%;
-    background-color: var(--background);
-    border-radius: 5px;
-    color: var(--primary-text);
-}
-
-.form-textarea:focus{
-    border: 1px solid var(--focus);
+  margin: 10px 30px 10px 30px;
+  flex-grow: 3;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-textarea {
-    border: 1px solid var(--line);
+  resize: none;
+  margin: 0px 10px 0px 10px;
+  padding: 2px 5px 2px 5px;
+  height: 90%;
+  background-color: var(--background);
+  border-radius: 5px;
+  color: var(--primary-text);
+}
+
+.form-textarea:focus {
+  border: 1px solid var(--focus);
+}
+
+.form-textarea {
+  border: 1px solid var(--line);
 }
 
 .empty-input {
-    border: 1px solid var(--error);
+  border: 1px solid var(--error);
 }
 
-.project-desc-input-field label{
-    padding-left: 10px;
-    margin-bottom: 5px;
-    display: flex;
-    flex-direction: row;
-    color: var(--primary-text);
-    font-size: 16px;
+.project-desc-input-field label {
+  padding-left: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  color: var(--primary-text);
+  font-size: 16px;
 }
 
-.project-desc-input-field input{
-    margin: 0px 10px 0px 10px;
+.project-desc-input-field input {
+  margin: 0px 10px 0px 10px;
 }
 
 .err-msg {
-    color: var(--error);
+  color: var(--error);
 }
 
 .form-controls {
-    margin: 10px 30px 10px 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 0.2;
-    border-top: 1px solid var(--line);
+  margin: 10px 30px 10px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0.2;
+  border-top: 1px solid var(--line);
 }
 
 .form-controls button {
-    padding: 5px;
-    margin: 5px;
-    max-height: 32px;
-    min-width: 55px;
-    border: none;
-    border-radius: 5px;
-    background-color: inherit;
-    color: var(--primary-text);
-    font-size: 14px;
+  padding: 5px;
+  margin: 5px;
+  max-height: 32px;
+  min-width: 55px;
+  border: none;
+  border-radius: 5px;
+  background-color: inherit;
+  color: var(--primary-text);
+  font-size: 14px;
 }
 
 .form-controls button:hover {
-    background-color: var(--center-panel);
+  background-color: var(--center-panel);
 }
 
 .form-controls #save-project-btn:active {
-    color: var(--focus);
+  color: var(--focus);
 }
 
 .form-controls #save-project-edit-btn:active {
-    color: var(--focus);
+  color: var(--focus);
 }
 
 .form-controls #cancel-project-btn:active {
-    color: var(--error);
+  color: var(--error);
 }
 
 .form-controls #cancel-project-edit-btn:active {
-    color: var(--error);
+  color: var(--error);
 }
 
 .task-name-input-field {
-    margin: 10px 30px 10px 30px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+  margin: 10px 30px 10px 30px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.task-name-input-field label{
-    padding-left: 10px;
-    margin-bottom: 5px;
-    display: flex;
-    flex-direction: row;
-    color: var(--primary-text);
-    font-size: 16px;
+.task-name-input-field label {
+  padding-left: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  color: var(--primary-text);
+  font-size: 16px;
 }
 
 .task-desc-input-field {
-    margin: 10px 30px 10px 30px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+  margin: 10px 30px 10px 30px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .task-desc-input-field label {
-    padding-left: 10px;
-    margin-bottom: 5px;
-    display: flex;
-    flex-direction: row;
-    color: var(--primary-text);
-    font-size: 16px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  color: var(--primary-text);
+  font-size: 16px;
 }
 
 .task-date-input-field {
-    margin: 10px 30px 10px 30px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+  margin: 10px 30px 10px 30px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .task-date-input-field label {
-    padding-left: 10px;
-    margin-bottom: 5px;
-    display: flex;
-    flex-direction: row;
-    color: var(--primary-text);
-    font-size: 16px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  color: var(--primary-text);
+  font-size: 16px;
 }
 
 .task-priority-input-field {
-    margin: 10px 30px 10px 30px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+  margin: 10px 30px 10px 30px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 #add-task-date-input {
-    margin: 0px 10px 0px 10px;
-    padding: 2px 5px 2px 5px;
-    background-color: var(--background);
-    border: 1px solid var(--line);
-    border-radius: 5px;
-    color: var(--primary-text);
+  margin: 0px 10px 0px 10px;
+  padding: 2px 5px 2px 5px;
+  background-color: var(--background);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  color: var(--primary-text);
 }
 
 #edit-task-date-input {
-    margin: 0px 10px 0px 10px;
-    padding: 2px 5px 2px 5px;
-    background-color: var(--background);
-    border: 1px solid var(--line);
-    border-radius: 5px;
-    color: var(--primary-text);
+  margin: 0px 10px 0px 10px;
+  padding: 2px 5px 2px 5px;
+  background-color: var(--background);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  color: var(--primary-text);
 }
 
-.task-priority-input-field label { 
-    padding-left: 10px;
-    margin-bottom: 5px;
-    display: flex;
-    flex-direction: row;
-    color: var(--primary-text);
-    font-size: 16px;
+.task-priority-input-field label {
+  padding-left: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  color: var(--primary-text);
+  font-size: 16px;
 }
 
 #add-task-priority-input {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 #edit-task-priority-input {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .priority-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .radio__input {
-    display: flex;
+  display: flex;
 }
 
-.radio__input input{
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
+.radio__input input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .radio__control {
-    display: block;
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    border: 0.1em solid var(--line);
+  display: block;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 0.1em solid var(--line);
 }
 
 #low-radio-control {
-    border-color:#fdfd96;
+  border-color: #fdfd96;
 }
 
 #normal-radio-control {
-    border-color: #ffb347;
+  border-color: #ffb347;
 }
 
 #high-radio-control {
-    border-color: #ff6961;
+  border-color: #ff6961;
 }
 
-.radio__input input:checked + #low-radio-control{
-    background: radial-gradient(#fdfd96 50%, rgba(255, 0, 0, 0) 51%);
+.radio__input input:checked + #low-radio-control {
+  background: radial-gradient(#fdfd96 50%, rgba(255, 0, 0, 0) 51%);
 }
 
-.radio__input input:checked + #normal-radio-control{
-    background: radial-gradient(#ffb347 50%, rgba(255, 0, 0, 0) 51%);
+.radio__input input:checked + #normal-radio-control {
+  background: radial-gradient(#ffb347 50%, rgba(255, 0, 0, 0) 51%);
 }
 
-.radio__input input:checked + #high-radio-control{
-    background: radial-gradient(#ff6961 50%, rgba(255, 0, 0, 0) 51%);
+.radio__input input:checked + #high-radio-control {
+  background: radial-gradient(#ff6961 50%, rgba(255, 0, 0, 0) 51%);
 }
 
 .priority-label {
-    line-height: 1;
-    height: 16px;
-    font-size: 16px;
+  line-height: 1;
+  height: 16px;
+  font-size: 16px;
 }
